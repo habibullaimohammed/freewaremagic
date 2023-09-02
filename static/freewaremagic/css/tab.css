@@ -1,0 +1,25 @@
+.container .nav .nav-link {
+    color: black !important;
+}
+.container .nav .active {
+    color: white !important;
+    background-color: black !important;
+}
+
+.tab-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* Hide horizontal scrollbar */
+.hide-horizontal-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-horizontal-scrollbar{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

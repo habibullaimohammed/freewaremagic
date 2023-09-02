@@ -1,0 +1,1354 @@
+{% include 'base.html' %}
+
+<!--Showcase-->
+<section class="bg-dark text-light p-lg-5 p-3">
+    <div class="container">
+        <h1 class="display-1 pt-5 pb-5">
+            The best <span>Apps</span>
+            <!--      Games Mods Apks Software News-->
+            <br>for you in one place.
+        </h1>
+        <form class="d-flex input-group pb-2" role="search">
+            <input aria-label="Search" class="form-control form-control-lg " placeholder="What would you like to today?"
+                   type="search">
+            <button class="btn btn-secondary btn-lg" id="button-addon2" type="submit">Search</button>
+        </form>
+    </div>
+</section>
+
+<!--Trending content-->
+<section class="pt-5">
+    <div class="container">
+        <h4 class="mb-4">Trending content</h4>
+        <div class="row text-center g-4">
+            <div class="col-lg-3 col-12 text-start">
+                <div class="card bg-dark d-flex flex-row align-items-center p-3">
+                    <svg class="text-light" height="50" role="img" viewBox="0 0 1024 1024" width="50">
+                        <g fill="currentColor">
+                            <path d="M561.024 594.944l-132.523-33.92 33.92-132.523 132.523 33.92-33.92 132.523zM259.883 85.333l-174.549 678.827 678.827 174.507 174.507-678.827-678.827-174.507z"></path>
+                        </g>
+                    </svg>
+                    <div class="card-body">
+                        <h5 class="card-title text-light ">Roblox games</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-12 text-start">
+                <div class="card d-flex flex-row align-items-center p-3">
+                    <svg class="p-2" height="65" role="img" viewBox="0 0 1024 1024" width="65">
+                        <g fill="currentColor">
+                            <path d="M512 85.333c-0.233-0-0.509-0.001-0.785-0.001-131.972 0-249.889 60.176-327.81 154.586l-0.578 0.721 123.733 214.4c25.173-90.027 107.52-156.373 205.44-156.373h369.28c-74.938-128.416-212.058-213.333-369.011-213.333-0.094 0-0.189 0-0.283 0l0.014-0zM142.507 298.88c-35.94 60.814-57.174 134.014-57.174 212.173 0 0.333 0 0.666 0.001 0.999l-0-0.052c-0 0.070-0 0.153-0 0.236 0 210.624 152.755 385.57 353.522 420.098l2.531 0.36 123.947-214.4c-17.067 4.48-34.987 7.040-53.333 7.040-78.502-0.13-147.046-42.64-183.988-105.869l-0.546-1.011-0.213 0.213-184.747-319.787zM512 362.667c-82.475 0-149.333 66.859-149.333 149.333s66.859 149.333 149.333 149.333v0c82.475 0 149.333-66.859 149.333-149.333s-66.859-149.333-149.333-149.333v0zM664.107 362.667c37.866 38.274 61.259 90.932 61.259 149.054 0 39.326-10.71 76.151-29.371 107.718l0.539-0.985 0.213 0.213-184.747 320c235.733 0 426.667-190.933 426.667-426.667 0-52.48-9.6-102.827-26.88-149.333h-247.68z"></path>
+                        </g>
+                    </svg>
+                    <div class="card-body">
+                        <h5 class="card-text">Chrome extensions</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 text-start">
+                <div class="card bg-dark d-flex flex-row align-items-center p-3">
+                    <svg class="text-light" height="50" role="img" viewBox="0 0 1024 1024" width="50">
+                        <g fill="currentColor">
+                            <path d="M512.085 85.333l-349.099 155.136v232.747c0 215.253 148.907 416.597 349.099 465.451 200.107-48.853 349.099-250.197 349.099-465.493v-232.661l-349.099-155.179zM512.085 511.573h271.531c-20.565 159.829-127.232 302.208-271.531 346.795v-346.368h-271.531v-221.099l271.531-120.619v341.333z"></path>
+                        </g>
+                    </svg>
+                    <div class="card-body">
+                        <h5 class="card-title text-light">VPN</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 text-start">
+                <div class="card d-flex flex-row align-items-center p-3">
+                    <svg class="" height="50" role="img" viewBox="0 0 1024 1024" width="50">
+                        <g fill="currentColor">
+                            <path d="M503.475 170.667c16.038 0 30.106 5.286 39.347 12.849 9.007 7.368 11.844 15.311 11.844 21.286 0 1.44 0.073 2.863 0.209 4.266-0.137 1.403-0.209 2.826-0.209 4.266v367.134c-29.564-16.081-63.723-24.422-98.21-24.422-23.565 0-42.668 19.102-42.668 42.667 0 23.561 19.104 42.667 42.668 42.667 28.476 0 54.485 9.353 72.546 24.175 17.813 14.618 25.651 32.427 25.664 48.734v85.722c-0.004 6.443-1.749 13.231-5.696 19.959-3.994 6.801-10.27 13.551-19.004 19.277-8.747 5.73-19.456 10.091-31.424 12.356-11.964 2.27-24.465 2.308-36.459 0.115-11.998-2.197-22.763-6.494-31.586-12.186-8.812-5.683-15.171-12.416-19.242-19.217-4.029-6.733-5.839-13.53-5.9-19.977-0.134-14.118-0.153-19.533-0.003-38.383 0.123-15.514-8.183-29.871-21.694-37.5-13.51-7.625-30.095-7.313-43.313 0.811-14.369 8.828-33.112 13.73-52.798 12.813-19.697-0.917-37.278-7.505-49.841-17.233-12.436-9.63-18.412-20.975-19.799-31.078-1.359-9.89 1.334-20.877 9.819-31.266 10.991-13.457 12.403-31.607 5.068-46.191-2.973-7.322-8.015-13.905-14.957-18.795-18.154-12.783-31.17-28.382-38.831-44.804-7.607-16.307-9.951-33.395-7.276-50.014 2.686-16.687 10.531-33.429 23.88-48.521 3.921-4.429 9.031-8.064 17.731-12.070 3.846-1.775 7.439-3.243 11.271-4.715l0.573 0.563c17.683 17.237 39.207 30.605 62.78 39.625 23.578 9.020 48.986 13.615 74.517 13.649 23.564 0.026 42.69-19.051 42.719-42.615s-19.050-42.691-42.614-42.72c-15.465-0.019-30.548-2.816-44.127-8.012-13.584-5.198-24.988-12.53-33.708-21.030-8.693-8.475-14.407-17.787-17.461-27.024-3.032-9.172-3.546-18.544-1.633-27.695 1.923-9.202 6.399-18.609 13.825-27.427 7.459-8.858 17.701-16.867 30.416-23 12.714-6.132 27.275-10.077 42.647-11.299 15.369-1.222 30.799 0.34 45.114 4.473 13.956 4.029 29.003 0.681 39.933-8.886 10.931-9.567 16.243-24.038 14.101-38.405-0.73-4.882 0.034-10.576 2.598-16.498 2.633-6.084 6.524-10.864 9.835-13.574 9.242-7.563 23.309-12.849 39.347-12.849zM640 800v-74.667h70.242l65.523 92.386c-4.983 10.837-7.765 22.903-7.765 35.614 0 47.13 38.204 85.333 85.333 85.333s85.333-38.204 85.333-85.333c0-47.13-38.204-85.333-85.333-85.333-2.684 0-5.338 0.124-7.953 0.367l-67.213-94.767c-2.103-2.961-5.687-7.706-10.901-12.301v0c-15.526-13.679-35.563-21.299-56.405-21.299h-70.861v-85.333h139.418c14.754 25.506 42.33 42.667 73.916 42.667 47.13 0 85.333-38.204 85.333-85.333s-38.204-85.333-85.333-85.333c-31.586 0-59.162 17.161-73.916 42.667h-139.418v-85.333h67.196c27.264 0 52.885-13.028 68.949-35.057l68.117-93.419c2.982 0.315 6.007 0.476 9.071 0.476 47.13 0 85.333-38.205 85.333-85.333s-38.204-85.333-85.333-85.333c-47.13 0-85.333 38.205-85.333 85.333 0 12.315 2.607 24.020 7.305 34.594l-68.109 93.406h-67.196v-85.333c0-1.44-0.073-2.863-0.209-4.266 0.137-1.403 0.209-2.826 0.209-4.266 0-34.763-16.939-65.89-43.136-87.328-25.963-21.243-59.639-32.141-93.389-32.141s-67.426 10.897-93.388 32.141c-15.39 12.593-29.266 31.321-37.158 53.435-9.036-0.43-18.109-0.288-27.144 0.43-25.434 2.022-50.326 8.588-72.957 19.503-22.63 10.914-42.774 26.077-58.621 44.898-15.881 18.86-27.071 40.973-32.078 64.932-4.015 19.206-3.885 38.81 0.27 57.812-1.641 0.705-3.24 1.414-4.778 2.123-15.217 7.014-31.571 16.805-45.926 33.033-23.202 26.23-38.759 57.612-44.213 91.497-5.465 33.95-0.432 68.297 14.192 99.648 9.549 20.471 22.878 39.027 39.122 55.155-7.564 19.277-10.343 40.222-7.429 61.44 4.8 34.944 24.291 65.404 52.092 86.933 27.675 21.431 62.507 33.348 98.12 35.008 12.826 0.597 25.688-0.141 38.294-2.185 2.673 15.147 8.182 29.67 16.162 42.999 11.395 19.038 27.401 34.97 46.199 47.1 18.79 12.122 40.174 20.335 62.489 24.418 22.319 4.087 45.419 4.015 67.708-0.209 22.285-4.224 43.61-12.578 62.31-24.832 18.705-12.258 34.586-28.309 45.815-47.445 6.857-11.674 11.819-24.239 14.66-37.312 1.796-4.719 2.782-9.839 2.782-15.189v-10.667z"></path>
+                        </g>
+                    </svg>
+                    <div class="card-body">
+                        <h5 class="card-title">AI</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Trending Games-->
+<section class="pt-5">
+    <div class="container">
+        <h4 class="mb-4">Trending Games</h4>
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-windows" aria-selected="true" class="nav-link active"
+                                data-bs-target="#pills-windows" data-bs-toggle="pill" id="pills-windows-tab" role="tab"
+                                type="button">Windows
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-android" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-android" data-bs-toggle="pill" id="pills-android-tab" role="tab"
+                                type="button">Android
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-mac" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-mac"
+                                data-bs-toggle="pill" id="pills-mac-tab" role="tab" type="button">Mac
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-iphone" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-iphone" data-bs-toggle="pill" id="pills-iphone-tab" role="tab"
+                                type="button">Iphone
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-ps2" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-ps2"
+                                data-bs-toggle="pill" id="pills-ps2-tab" role="tab" type="button">Ps2
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body text-center">
+                <div class="tab-content" id="pills-tabContent">
+                    <div aria-labelledby="pills-windows-tab" class="tab-pane fade show active" id="pills-windows"
+                         role="tabpanel" tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="pills-android-tab" class="tab-pane fade" id="pills-android" role="tabpanel"
+                         tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="pills-mac-tab" class="tab-pane fade" id="pills-mac" role="tabpanel"
+                         tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="pills-iphone-tab" class="tab-pane fade" id="pills-iphone" role="tabpanel"
+                         tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="pills-ps2-tab" class="tab-pane fade" id="pills-ps2" role="tabpanel"
+                         tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-outline-dark mt-3 px-5" href="#">View all</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Trending apps-->
+<section class="pt-5">
+    <div class="container">
+        <h4 class="mb-4">Trending Apps</h4>
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-pills mb-3" id="pills-tab-trending-apps" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-windows-trending-apps" aria-selected="true" class="nav-link active"
+                                data-bs-target="#pills-windows-trending-apps" data-bs-toggle="pill"
+                                id="pills-windows-tab-trending-apps"
+                                role="tab" type="button">Windows
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-android-trending-apps" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-android-trending-apps" data-bs-toggle="pill"
+                                id="pills-android-tab-trending-apps"
+                                role="tab" type="button">Android
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-mac-trending-apps" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-mac-trending-apps" data-bs-toggle="pill"
+                                id="pills-mac-tab-trending-apps"
+                                role="tab" type="button">Mac
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-iphone" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-iphone-trending-apps" data-bs-toggle="pill"
+                                id="pills-iphone-tab-trending-apps"
+                                role="tab" type="button">Iphone
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body text-center">
+                <div class="tab-content" id="pills-tabContent-trending-apps">
+                    <div aria-labelledby="pills-windows-tab-trending-apps" class="tab-pane fade show active"
+                         id="pills-windows-trending-apps"
+                         role="tabpanel" tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/285215fe-9b2f-11e6-ac5a-00163ec9f5fa/907707968/shareit-Download-SHAREit.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">SHAREit</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/30e0f2e8-96d0-11e6-b461-00163ec9f5fa/1146307800/adobe-reader-icon.png"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Adobe Reader DC</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="pills-android-tab-trending-apps" class="tab-pane fade"
+                         id="pills-android-trending-apps"
+                         role="tabpanel" tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="pills-mac-tab-trending-apps" class="tab-pane fade"
+                         id="pills-mac-trending-apps"
+                         role="tabpanel" tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-labelledby="pills-iphone-tab-trending-apps" class="tab-pane fade"
+                         id="pills-iphone-trending-apps"
+                         role="tabpanel" tabindex="0">
+                        <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar g-3">
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                            <div class="card me-3" style="width: 15.5rem;">
+                                <img alt="..."
+                                     class="tab-img" height="112"
+                                     loading="eager"
+                                     sizes="(min-width: 768px) 22vw, (min-width: 1024px) 16wv, 33vw"
+                                     src="https://images.sftcdn.net/images/t_app-icon-l/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/3978925/gta-v-download-grand-theft-auto-v.jpg"
+                                     width="112">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-outline-dark mt-3 px-5" href="#">View all</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Top download-->
+<section class="pt-5">
+    <div class="container">
+        <h4 class="mb-4">Top download</h4>
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-pills mb-3" id="pills-tab-top-download" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-top-download" aria-selected="true" class="nav-link active"
+                                data-bs-target="#pills-windows-top-download" data-bs-toggle="pill"
+                                id="pills-windows-tab-top-download"
+                                role="tab" type="button">Windows
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-android-top-download" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-android-top-download" data-bs-toggle="pill"
+                                id="pills-android-tab-top-download"
+                                role="tab" type="button">Android
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-mac-top-download" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-mac-top-download" data-bs-toggle="pill"
+                                id="pills-mac-tab-top-download"
+                                role="tab" type="button">Mac
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="pills-iphone-top-download" aria-selected="false" class="nav-link"
+                                data-bs-target="#pills-iphone-top-download" data-bs-toggle="pill"
+                                id="pills-iphone-tab-top-download"
+                                role="tab" type="button">Iphone
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body text-center">
+                <div class="tab-content" id="pills-tabContent-top-download">
+                    <div aria-labelledby="pills-windows-tab-top-download" class="tab-pane fade show active"
+                         id="pills-windows-top-download"
+                         role="tabpanel" tabindex="0">
+                        <table class="table table-hover">
+                            <!--              <thead>-->
+                            <!--              <tr>-->
+                            <!--                <th scope="col">#</th>-->
+                            <!--                <th scope="col">Name</th>-->
+                            <!--                <th scope="col" class="d-none d-lg-block">Download Number</th>-->
+                            <!--                <th scope="col">download-btn</th>-->
+                            <!--              </tr>-->
+                            <!--              </thead>-->
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div aria-labelledby="pills-android-tab-top-download" class="tab-pane fade"
+                         id="pills-android-top-download"
+                         role="tabpanel" tabindex="0">
+                        <table class="table table-hover">
+                            <!--              <thead>-->
+                            <!--              <tr>-->
+                            <!--                <th scope="col">#</th>-->
+                            <!--                <th scope="col">Name</th>-->
+                            <!--                <th scope="col" class="d-none d-lg-block">Download Number</th>-->
+                            <!--                <th scope="col">download-btn</th>-->
+                            <!--              </tr>-->
+                            <!--              </thead>-->
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div aria-labelledby="pills-mac-tab-top-download" class="tab-pane fade" id="pills-mac-top-download"
+                         role="tabpanel" tabindex="0">
+                        <table class="table table-hover">
+                            <!--              <thead>-->
+                            <!--              <tr>-->
+                            <!--                <th scope="col">#</th>-->
+                            <!--                <th scope="col">Name</th>-->
+                            <!--                <th scope="col" class="d-none d-lg-block">Download Number</th>-->
+                            <!--                <th scope="col">download-btn</th>-->
+                            <!--              </tr>-->
+                            <!--              </thead>-->
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div aria-labelledby="pills-iphone-tab-top-download" class="tab-pane fade"
+                         id="pills-iphone-top-download"
+                         role="tabpanel" tabindex="0">
+                        <table class="table table-hover">
+                            <!--              <thead>-->
+                            <!--              <tr>-->
+                            <!--                <th scope="col">#</th>-->
+                            <!--                <th scope="col">Name</th>-->
+                            <!--                <th scope="col" class="d-none d-lg-block">Download Number</th>-->
+                            <!--                <th scope="col">download-btn</th>-->
+                            <!--              </tr>-->
+                            <!--              </thead>-->
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>
+                                    <img alt="..."
+                                         class="pe-2"
+                                         src="https://images.sftcdn.net/images/t_app-icon-s/p/2d9f9134-96d0-11e6-bf8f-00163ec9f5fa/1408299994/avast-Avast_Symbol_V2_Positive_Orange_256x256.png"
+                                         width="50">
+                                    Avast Free Antivirus
+                                </td>
+                                <td class="d-none d-lg-table-cell">29.9M Downloads</td>
+                                <td>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <a class="btn btn-outline-dark mt-3 px-5" href="#">View all</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--News-->
+<section>
+    <div class="container pt-5 ">
+        <h4 class="mb-3">News</h4>
+        <div class="row mb-3 g-3">
+            <div class="col-lg-6">
+                <div class="card">
+                    <img alt="..."
+                         class="card-img-top" loading="lazy"
+                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner Professional!
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <img alt="..."
+                         class="card-img-top" loading="lazy"
+                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            AirTag: from finding the keys to locking up criminals
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3 g-3">
+            <div class="col-lg-4">
+                <div class="card">
+                    <img alt="..."
+                         class="card-img-top" loading="lazy"
+                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner Professional!
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <img alt="..."
+                         class="card-img-top" loading="lazy"
+                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            AirTag: from finding the keys to locking up criminals
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <img alt="..."
+                         class="card-img-top" loading="lazy"
+                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner Professional!
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <img alt="..."
+                         class="card-img-top" loading="lazy"
+                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            AirTag: from finding the keys to locking up criminals
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <img alt="..."
+                         class="card-img-top" loading="lazy"
+                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner Professional!
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <img alt="..."
+                         class="card-img-top" loading="lazy"
+                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            AirTag: from finding the keys to locking up criminals
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a class="btn btn-outline-dark mt-3 px-5 mb-5" href="#">View all</a>
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %}

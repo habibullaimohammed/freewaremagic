@@ -1,0 +1,370 @@
+
+
+<header>
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container">
+          <div class="row w-75">
+            <div class="col">
+              <button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler"
+                      data-bs-target="#offcanvasNavbar"
+                      data-bs-toggle="offcanvas" type="button">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <div class="col">
+              <a class="navbar-brand mx-4 d-flex" href="#">Freeware Magic</a>
+            </div>
+          </div>
+
+
+            <div class="d-none d-md-block">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 flex-row">
+                    <li class="nav-item">
+                        <a {% if request.path == "/" %} aria-current="page" {% endif %} class="nav-link me-3 {% if request.path == '/'%} active {% endif %}" href="#">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a {% if request.path == "/games" %} aria-current="page" {% endif %} class="nav-link me-3  {% if request.path == '/games'%} active {% endif %}" href="#">Games</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a {% if request.path == "/articles" %} aria-current="page" {% endif %} class="nav-link  {% if request.path == '/articles'%} active {% endif %}" href="#">Articles</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--      Games-->
+            <!--      AI-->
+            <!--      Browsers-->
+            <!--      Security and Privacy-->
+            <!--      Business&Productivty-->
+            <!--      Internet and Network-->
+            <!--      Multimedia-->
+            <!--      Development and IT-->
+            <!--      Education and Reference-->
+            <!--      Lifestyle-->
+            <!--      Personalization-->
+            <!--      Social and Communication-->
+            <!--      Travel and Navigation-->
+            <!--      Utilities and Tools-->
+            <div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Freeware Magic</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class=" nav-item bg-dark ps-3 mb-1 rounded ">
+                            <a aria-current="page" class="nav-link text-light active" href="#">News or Article</a>
+                        </li>
+                        <li class="nav-item bg-dark ps-3 rounded">
+                            <a aria-current="page" class="nav-link text-light active" href="#">Apps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasGames" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasGames">
+                                <span>Games</span>
+                                <svg class="bi bi-chevron-right" fill="currentColor" height="16" viewBox="0 0 16 16"
+                                     width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                          fill-rule="evenodd"/>
+                                </svg>
+
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasAI" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasAI"
+                               role="button">AI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasBrowsers" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasBrowsers">Browsers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasSecurityPrivacy" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasSecurityPrivacy">Security & Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasBusinessProductivty" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasBusinessProductivty">Business & Productivty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasInternetNetwork" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasInternetNetwork">Internet & Network</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasMultimedia" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasMultimedia">Multimedia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasDevelopmentIT" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasDevelopmentIT">Development & IT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasEducationReference" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasEducationReference">Education & Reference</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasLifestyle" class="nav-link " data-bs-toggle="offcanvas"
+                               href="#offcanvasLifestyle">Lifestyle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasPersonalization" class="nav-link " data-bs-toggle="offcanvas"
+                               href="#offcanvasPersonalization">Personalization</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasSocialCommunication" class="nav-link " data-bs-toggle="offcanvas"
+                               href="#offcanvasSocialCommunication">Social & Communication</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasTravelNavigation" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasTravelNavigation">Travel & Navigation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="offcanvasUtilitiesTools" class="nav-link" data-bs-toggle="offcanvas"
+                               href="#offcanvasUtilitiesTools">Utilities & Tools</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--      Games-->
+            <div aria-labelledby="offcanvasGamesLabel" class="offcanvas offcanvas-start" id="offcanvasGames"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasGamesLabel">Games</h5>
+                    <!--                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"-->
+                    <!--                            type="button"></button>-->
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas" fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      AI-->
+            <div aria-labelledby="offcanvasAILabel" class="offcanvas offcanvas-start" id="offcanvasAI" tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasAILabel">AI</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Browsers-->
+            <div aria-labelledby="offcanvasBrowsersLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsers"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasBrowsersLabel">Browsers</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Security and Privacy-->
+            <div aria-labelledby="offcanvasSecurityPrivacy" class="offcanvas offcanvas-start"
+                 id="offcanvasSecurityPrivacy"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyLabel">Security & Privacy</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Business & Productivty-->
+            <div aria-labelledby="offcanvasBusinessProductivty" class="offcanvas offcanvas-start"
+                 id="offcanvasBusinessProductivty"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasBusinessProductivtyLabel">Business & Productivity</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Internet and Network-->
+            <div aria-labelledby="offcanvasInternetNetwork" class="offcanvas offcanvas-start"
+                 id="offcanvasInternetNetwork"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasInternetNetworkLabel">Internet & Network</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Multimedia-->
+            <div aria-labelledby="offcanvasMultimedia" class="offcanvas offcanvas-start" id="offcanvasMultimedia"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasMultimediaLabel">Multimedia</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Development and IT-->
+            <div aria-labelledby="offcanvasDevelopmentIT" class="offcanvas offcanvas-start" id="offcanvasDevelopmentIT"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDevelopmentITLabel">Development and IT</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Education and Reference-->
+            <div aria-labelledby="offcanvasEducationReference" class="offcanvas offcanvas-start"
+                 id="offcanvasEducationReference"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasEducationReferenceLabel">Education and Reference</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Lifestyle-->
+            <div aria-labelledby="offcanvasLifestyle" class="offcanvas offcanvas-start" id="offcanvasLifestyle"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasLifestyleLabel">Lifestyle</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Personalization-->
+            <div aria-labelledby="offcanvasPersonalization" class="offcanvas offcanvas-start"
+                 id="offcanvasPersonalization"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasPersonalizationLabel">Personalization</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Social and Communication-->
+            <div aria-labelledby="offcanvasSocialCommunication" class="offcanvas offcanvas-start"
+                 id="offcanvasSocialCommunication"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasSocialCommunicationLabel">Social & Communication</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Travel and Navigation-->
+            <div aria-labelledby="offcanvasTravelNavigation" class="offcanvas offcanvas-start"
+                 id="offcanvasTravelNavigation"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasTravelNavigationLabel">Travel & Navigation</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+            <!--      Utilities and Tools-->
+            <div aria-labelledby="offcanvasUtilitiesTools" class="offcanvas offcanvas-start"
+                 id="offcanvasUtilitiesTools"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasUtilitiesToolsLabel">Utilities & Tools</h5>
+                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas"
+                            type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
