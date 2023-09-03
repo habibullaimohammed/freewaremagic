@@ -1,32 +1,35 @@
-
-
 <header>
     <nav class="navbar bg-body-tertiary fixed-top">
         <div class="container">
-          <div class="row w-75">
-            <div class="col">
-              <button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler"
-                      data-bs-target="#offcanvasNavbar"
-                      data-bs-toggle="offcanvas" type="button">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
+            <div class="row">
+                <div class="col">
+                    <button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler"
+                            data-bs-target="#offcanvasNavbar"
+                            data-bs-toggle="offcanvas" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col">
+                    <a class="navbar-brand mx-4 d-flex" href="/">
+                        Freeware Magic
+                    </a>
+                </div>
             </div>
-            <div class="col">
-              <a class="navbar-brand mx-4 d-flex" href="#">Freeware Magic</a>
-            </div>
-          </div>
 
 
             <div class="d-none d-md-block">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 flex-row">
                     <li class="nav-item">
-                        <a {% if request.path == "/" %} aria-current="page" {% endif %} class="nav-link me-3 {% if request.path == '/'%} active {% endif %}" href="#">Apps</a>
+                        <a {% if request.path== '/windows/' %} aria-current="page" {% endif %} class="nav-link me-3 {%
+                        if request.path == '/windows/'%} active {% endif %}" href="/windows/">Apps</a>
                     </li>
                     <li class="nav-item">
-                        <a {% if request.path == "/games" %} aria-current="page" {% endif %} class="nav-link me-3  {% if request.path == '/games'%} active {% endif %}" href="#">Games</a>
+                        <a {% if request.path== '/windows/games' %} aria-current="page" {% endif %} class="nav-link me-3
+                        {% if request.path == '/windows/games'%} active {% endif %}" href="/windows/games">Games</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a {% if request.path == "/articles" %} aria-current="page" {% endif %} class="nav-link  {% if request.path == '/articles'%} active {% endif %}" href="#">Articles</a>
+                        <a {% if request.path== '/articles/' %} aria-current="page" {% endif %} class="nav-link {% if
+                        request.path == '/articles/'%} active {% endif %}" href="/articles">Articles</a>
                     </li>
                 </ul>
             </div>
@@ -54,10 +57,11 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class=" nav-item bg-dark ps-3 mb-1 rounded ">
-                            <a aria-current="page" class="nav-link text-light active" href="#">News or Article</a>
+                            <a aria-current="page" class="nav-link text-light active" href="/articles">News or
+                                Article</a>
                         </li>
                         <li class="nav-item bg-dark ps-3 rounded">
-                            <a aria-current="page" class="nav-link text-light active" href="#">Apps</a>
+                            <a aria-current="page" class="nav-link text-light active" href="/windows">Apps</a>
                         </li>
                         <li class="nav-item">
                             <a aria-controls="offcanvasGames" class="nav-link" data-bs-toggle="offcanvas"
@@ -136,7 +140,8 @@
                     <h5 class="offcanvas-title" id="offcanvasGamesLabel">Games</h5>
                     <!--                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"-->
                     <!--                            type="button"></button>-->
-                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas" fill="currentColor"
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
                          height="16" viewBox="0 0 16 16" width="16"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"

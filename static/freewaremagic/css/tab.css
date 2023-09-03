@@ -1,6 +1,7 @@
 .container .nav .nav-link {
     color: black !important;
 }
+
 .container .nav .active {
     color: white !important;
     background-color: black !important;
@@ -19,7 +20,7 @@
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.hide-horizontal-scrollbar{
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+.hide-horizontal-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
