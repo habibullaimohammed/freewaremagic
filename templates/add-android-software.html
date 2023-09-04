@@ -1,0 +1,58 @@
+{% include 'base.html' %}
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Add new android app
+    </div>
+    <div class="card-body">
+      <form method="post">
+        <div class="form-group mb-3">
+          <label>Title</label>
+          <input type="text" class="form-control" name="title" required>
+        </div>
+        <div class="form-group mb-3">
+          <label>Description</label>
+          <textarea name="description" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="form-group mb-3">
+          <label>Image_url</label>
+          <input type="url" class="form-control" name="image_url" required>
+        </div>
+        <div class="form-group mb-3">
+          <label>Download_url</label>
+          <input type="url" class="form-control" name="download_url" required>
+        </div>
+        <div class="form-group mb-3">
+          <label>Download_url2</label>
+          <input type="url" class="form-control" name="download_url2" required>
+        </div>
+        <div class="form-group mb-3">
+          <label>Category</label>
+          <select name="category" class="form-select">
+            <option>Browsers</option>
+            <option>Business & Productivty</option>
+            <option>Development & IT</option>
+            <option>Education & Reference</option>
+            <option>Games</option>
+            <option>Internet & Network</option>
+            <option>Lifestyle</option>
+            <option>Multimedia</option>
+            <option>Personalization</option>
+            <option>Social & Communication</option>
+            <option>Travel $ Navigation</option>
+            <option>AI</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <label>Sub category</label>
+          <select name="sub_category" class="form-select">
+            <option>Add-ons & Tools</option>
+            <option>Web browsers</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add new android app</button>
+      </form>
+    </div>
+  </div>
+</div>

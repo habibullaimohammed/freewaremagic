@@ -4,16 +4,38 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <h4 class="pb-2">Windows Apps</h4>
+                <h4 class="pb-2">
+                    {% if request.path == '/android/'%}
+                     Android Apps
+                    {% elif request.path == '/windows/' %}
+                    Windows Apps
+                    {% else%}
+                    Console Games
+                    {% endif%}
+                </h4>
                 <a class="btn btn-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                    aria-controls="offcanvasExample">
-                    Windows Apps Category
+                    {% if request.path == '/android/'%}
+                     Android Apps Categories
+                    {% elif request.path == '/windows/' %}
+                    Windows Apps Categories
+                    {% else%}
+                    Console Games Categories
+                    {% endif%}
                 </a>
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
                      aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Windows Apps Category</h5>
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                            {% if request.path == '/android/'%}
+                             Android Apps Categories
+                            {% elif request.path == '/windows/' %}
+                            Windows Apps Categories
+                            {% else%}
+                            Console Games Categories
+                            {% endif%}
+                        </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -34,177 +56,177 @@
                     </div>
                 </div>
                 <div class="row d-none d-sm-flex">
+                    {% for app in android_apps %}
                     <div class="col-lg-4 mt-3 mb-3">
                         <div class="card">
                             <div class="card-header">
-                                Category name
+                                {{app.category}}
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">{{app.title}}</li>
                             </ul>
                             <div class="card-footer">
-                                <a href="#" class="card-link text-decoration-none">see all</a>
+                                <a href="/android/{{app.category}}/" class="card-link text-decoration-none">see all</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
+                    {% endfor %}
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-4 mt-3 mb-3">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                Category name-->
+<!--                            </div>-->
+<!--                            <ul class="list-group list-group-flush">-->
+<!--                                <li class="list-group-item">An item</li>-->
+<!--                                <li class="list-group-item">A second item</li>-->
+<!--                                <li class="list-group-item">A third item</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar d-lg-none">
                     <div class="col-lg-4 mt-3 mb-3">

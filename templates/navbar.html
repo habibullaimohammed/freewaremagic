@@ -31,6 +31,11 @@
                         <a {% if request.path== '/articles/' %} aria-current="page" {% endif %} class="nav-link {% if
                         request.path == '/articles/'%} active {% endif %}" href="/articles">Articles</a>
                     </li>
+                    {% if user != None%}
+                    <li class="nav-item me-3">
+                        <a  class="nav-link" href="/auth/logout">Logout</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
 
@@ -61,7 +66,7 @@
                                 Article</a>
                         </li>
                         <li class="nav-item bg-dark ps-3 rounded">
-                            <a aria-current="page" class="nav-link text-light active" href="/windows">Apps</a>
+                            <a aria-current="page" class="nav-link text-light active" href="/android">Apps</a>
                         </li>
                         <li class="nav-item">
                             <a aria-controls="offcanvasGames" class="nav-link" data-bs-toggle="offcanvas"

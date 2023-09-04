@@ -1,0 +1,10 @@
+{% include 'base.html' %}
+
+<div class="container">
+    {% for app in current_category%}
+    <h1>{{app.category}}</h1>
+    <div class="card">
+        <a href="/android/{{app.category}}/{{app.title}}">{{app.title}}</a>
+    </div>
+    {% endfor %}
+</div>
