@@ -32,18 +32,6 @@ async def get_windows(request: Request, db: Session = Depends(get_db)):
     return templates.TemplateResponse("apps.html", {"request": request, "android_apps": android_apps, "user": user})
 
 
-@router.get("/{category}")
-async def android_category(category: str, request: Request, db: Session = Depends(get_db)):
-    current_category = db.query(testModel.Android).filter(testModel.Android.category == category).all()
-    return templates.TemplateResponse("app-category.html", {"request": request, "current_category": current_category})
-
-
-@router.get("/{category}/{title}")
-async def android_category(category: str, title: str, request: Request, db: Session = Depends(get_db)):
-    app_details = db.query(testModel.Android).filter(testModel.Android.title == title).first()
-    return templates.TemplateResponse("app-details.html", {"request": request, "app_details": app_details})
-
-
 @router.get("/add-android-apps", response_class=HTMLResponse)
 async def add_new_android_software(request: Request):
     user = await get_current_user(request)
@@ -80,6 +68,18 @@ async def add_android_app(request: Request,
     db.commit()
 
     return RedirectResponse(url="/", status_code=status.HTTP_302_FOUND)
+
+
+@router.get("/{category}")
+async def android_category(category: str, request: Request, db: Session = Depends(get_db)):
+    current_category = db.query(testModel.Android).filter(testModel.Android.category == category).all()
+    return templates.TemplateResponse("app-category.html", {"request": request, "current_category": current_category})
+
+
+@router.get("/{category}/{title}")
+async def android_category(category: str, title: str, request: Request, db: Session = Depends(get_db)):
+    app_details = db.query(testModel.Android).filter(testModel.Android.title == title).first()
+    return templates.TemplateResponse("app-details.html", {"request": request, "app_details": app_details})
 
 
 
