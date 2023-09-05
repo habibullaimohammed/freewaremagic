@@ -3,36 +3,36 @@
 <div class="container">
   <div class="card">
     <div class="card-header">
-      Add new android app
+      Edit android app
     </div>
     <div class="card-body">
       <form method="post">
         <div class="form-group mb-3">
           <label>Title</label>
-          <input type="text" class="form-control" name="title" required>
+          <input type="text" class="form-control" name="title_name" value="{{app_details.title}}" required>
         </div>
         <div class="form-group mb-3">
           <label>Description</label>
-          <textarea name="description" class="form-control" rows="4" required></textarea>
+          <textarea name="description" class="form-control" rows="4" required>{{app_details.description}}</textarea>
         </div>
         <div class="form-group mb-3">
           <label>Image_url</label>
-          <input type="url" class="form-control" name="image_url" required>
+          <input type="url" class="form-control" name="image_url" value="{{app_details.image_url}}" required>
         </div>
         <div class="form-group mb-3">
           <label>Download_url</label>
-          <input type="url" class="form-control" name="download_url" required>
+          <input type="url" class="form-control" name="download_url" value="{{app_details.download_url}}" required>
         </div>
         <div class="form-group mb-3">
           <label>Download_url2</label>
-          <input type="url" class="form-control" name="download_url2" required>
+          <input type="url" class="form-control" name="download_url2" value="{{app_details.download_url2}}" required>
         </div>
         <div class="form-group mb-3">
           <label>Category</label>
-          <select name="category" class="form-select" id="categorySelect" required>
-            <option value="Browsers">Browsers</option>
-            <option value="Business & Productivity">Business & Productivity</option>
-            <option value="Games">Games</option>
+          <select name="category_name" class="form-select" id="categorySelect" required>
+            <option {% if app_details.category == "Browsers" %} selected="selected" {% endif %} value="Browsers">Browsers</option>
+            <option {% if app_details.category == "Business & Productivity" %} selected="selected" {% endif %} value="Business & Productivity">Business & Productivity</option>
+            <option {% if app_details.category == "Games" %} selected="selected" {% endif %} value="Games">Games</option>
             <!-- Add other category options here -->
           </select>
         </div>
@@ -42,7 +42,8 @@
             <!-- Subcategory options will be dynamically generated using JavaScript -->
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Add new android app</button>
+        <button type="submit" class="btn btn-primary">Edit</button>
+        <button onclick="window.location.href='/android/delete/{{app_details.title}}'" type="button" class="btn btn-danger">Delete</button>
       </form>
     </div>
   </div>

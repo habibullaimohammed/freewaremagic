@@ -23,6 +23,11 @@
                     Console Games Categories
                     {% endif%}
                 </a>
+                {% if user != None%}
+                <a class="btn btn-dark" href={% if request.path == '/android/' %}"/android/add-android-apps/"{%endif%} role="button">
+                    Add new app
+                </a>
+                {% endif %}
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
                      aria-labelledby="offcanvasExampleLabel">
@@ -56,253 +61,132 @@
                     </div>
                 </div>
                 <div class="row d-none d-sm-flex">
-                    {% for app in android_apps %}
+                    {% for category, apps in android_apps|groupby('category') %}
                     <div class="col-lg-4 mt-3 mb-3">
                         <div class="card">
                             <div class="card-header">
-                                {{app.category}}
+                                {{ category }}
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{{app.title}}</li>
+                                {% for app in apps %}
+                                <li class="list-group-item">
+                                   <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <img src="{{ app.image_url }}" class="img-fluid" width="55" height="55" alt="{{ app.title }}">
+                                        </div>
+                                        <div class="col">
+                                            <a href="/android/{{ app.category|replace(' ', '-') }}/{{ app.title|replace(' ', '-') }}">
+                                                {{ app.title }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
                             </ul>
                             <div class="card-footer">
-                                <a href="/android/{{app.category}}/" class="card-link text-decoration-none">see all</a>
+                                <a href="/android/{{ category|replace(' ','-') }}/" class="card-link text-decoration-none">see all</a>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 mt-3 mb-3">-->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                Category name-->
-<!--                            </div>-->
-<!--                            <ul class="list-group list-group-flush">-->
-<!--                                <li class="list-group-item">An item</li>-->
-<!--                                <li class="list-group-item">A second item</li>-->
-<!--                                <li class="list-group-item">A third item</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
                 </div>
                 <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar d-lg-none">
+                    {% for category, apps in android_apps|groupby('category') %}
                     <div class="col-lg-4 mt-3 mb-3">
                         <div class="card">
                             <div class="card-header">
-                                Category name
+                                {{ category }}
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
+                                {% for app in apps %}
+                                <li class="list-group-item">
+                                   <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <img src="{{ app.image_url }}" class="img-fluid" width="55" height="55" alt="{{ app.title }}">
+                                        </div>
+                                        <div class="col">
+                                            <a href="/android/{{ app.category|replace(' ', '-') }}/{{ app.title|replace(' ', '-') }}">
+                                                {{ app.title }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
                             </ul>
+                            <div class="card-footer">
+                                <a href="/android/{{ category|replace(' ','-') }}/" class="card-link text-decoration-none">see all</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 mt-3 mb-3">
+                    {% endfor %}
+                </div>
+                <div class="col">
+                <h5 class="pb-2">All Apps</h5>
+                <span><small>for windows</small></span>
+                <div class="row g-2">
+                    <div class="col-lg-3">
                         <div class="card">
-                            <div class="card-header">
-                                Category name
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                Category name
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
+
+<!--                    <div class="col-lg-3">-->
+<!--                        <div class="card">-->
+<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
+<!--                            <div class="card-body">-->
+<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
+<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3">-->
+<!--                        <div class="card">-->
+<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
+<!--                            <div class="card-body">-->
+<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
+<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3">-->
+<!--                        <div class="card">-->
+<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
+<!--                            <div class="card-body">-->
+<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
+<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3">-->
+<!--                        <div class="card">-->
+<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
+<!--                            <div class="card-body">-->
+<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
+<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3">-->
+<!--                        <div class="card">-->
+<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
+<!--                            <div class="card-body">-->
+<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
+<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+
+                <div class="text-center mb-3">
+                <a class="btn btn-outline-dark mt-3 px-5" href="#">More Apps</a>
                 </div>
             </div>
+            </div>
+
 
             <div class="col-lg-4">
                 <h4>Recommended articles</h4>
@@ -457,7 +341,7 @@
                 </div>
 
                 <div class="text-center mb-3">
-                <a class="btn btn-outline-dark mt-3 px-5" href="#">New Apps for</a>
+                <a class="btn btn-outline-dark mt-3 px-5" href="#">Trending Apps</a>
                 </div>
             </div>
 

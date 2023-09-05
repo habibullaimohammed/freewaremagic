@@ -1,10 +1,221 @@
 {% include 'base.html' %}
 
 <div class="container">
-    {% for app in current_category%}
-    <h1>{{app.category}}</h1>
-    <div class="card">
-        <a href="/android/{{app.category}}/{{app.title}}">{{app.title}}</a>
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="border-bottom mb-3">
+                    <h4 class="pb-2">
+                    {{category}} for android
+                    </h4>
+                </div>
+                <div>
+                    <h5>Essential {{category}}</h5>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row g-3 align-items-center justify-content-center">
+                                <div class="card me-3" style="width: 16rem;">
+                                  <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/285215fe-9b2f-11e6-ac5a-00163ec9f5fa/23734468/shareit-SHAREit-for-Windows-Tools.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                       <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <img class="rounded" src="https://images.sftcdn.net/images/t_app-icon-m/p/285215fe-9b2f-11e6-ac5a-00163ec9f5fa/907707968/shareit-Download-SHAREit.jpg" class="img-fluid" width="55" height="55" alt="">
+                                        </div>
+                                        <div class="col">
+                                            <h6>SHAREit</h6>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card me-3" style="width: 16rem;">
+                                  <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/285215fe-9b2f-11e6-ac5a-00163ec9f5fa/23734468/shareit-SHAREit-for-Windows-Tools.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                       <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <img class="rounded" src="https://images.sftcdn.net/images/t_app-icon-m/p/285215fe-9b2f-11e6-ac5a-00163ec9f5fa/907707968/shareit-Download-SHAREit.jpg" class="img-fluid" width="55" height="55" alt="">
+                                        </div>
+                                        <div class="col">
+                                            <h6>SHAREit</h6>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card me-3" style="width: 16rem;">
+                                  <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/285215fe-9b2f-11e6-ac5a-00163ec9f5fa/23734468/shareit-SHAREit-for-Windows-Tools.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                       <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <img class="rounded" src="https://images.sftcdn.net/images/t_app-icon-m/p/285215fe-9b2f-11e6-ac5a-00163ec9f5fa/907707968/shareit-Download-SHAREit.jpg" class="img-fluid" width="55" height="55" alt="">
+                                        </div>
+                                        <div class="col">
+                                            <h6>SHAREit</h6>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mb-2 mt-5">Trending Apps</h5>
+                <span><small>for windows</small></span>
+                <div class="row g-2">
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">Card title</h6>
+                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-3">
+                <a class="btn btn-outline-dark mt-3 px-5" href="#">Trending Apps</a>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <h4>Recommended articles</h4>
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a class="btn btn-outline-dark mt-3" href="#">Read more stories</a>
+                </div>
+            </div>
+        </div>
     </div>
-    {% endfor %}
+</section>
 </div>
+
+{% include 'footer.html'%}
