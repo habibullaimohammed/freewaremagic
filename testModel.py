@@ -1,6 +1,7 @@
-from sqlalchemy import Boolean, Column, Integer, String, ForeignKey
+from sqlalchemy import Boolean, Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from config.database import Base
+from datetime import datetime
 
 
 class Users(Base):
@@ -22,12 +23,16 @@ class Android(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String)
+    quill_description = Column(String)
     description = Column(String)
     image_url = Column(String)
     download_url = Column(String)
     download_url2 = Column(String)
+    download_count = Column(Integer, default=0)
     category = Column(String)
     sub_category = Column(String)
+
+    created_at = Column(DateTime, default=datetime.utcnow)
     owner_id = Column(Integer, ForeignKey("users.id"))
 
     owner = relationship("Users", back_populates="android")

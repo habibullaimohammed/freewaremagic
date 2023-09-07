@@ -13,7 +13,6 @@
                     Console Games
                     {% endif%}
                 </h4>
-
                 <div class="border-top border-bottom mb-3 mt-3">
                     <a class="btn dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasCategory" role="button"
                       aria-controls="offcanvasExample">
@@ -21,7 +20,7 @@
                     </a>
                     <a class="btn dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasSubCategory" role="button"
                       aria-controls="offcanvasExample">
-                    sub categories
+                        {{sub_category}}
                     </a>
                 </div>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCategory"
@@ -141,6 +140,7 @@
                     <h5>All Apps</h5>
                     <div class="row g-2">
                         {% for app in current_category %}
+                        {% if app.sub_category == sub_category %}
                         <div class="col-lg-3">
                             <div class="card">
                                 <img src="{{ app.image_url }}" class="card-img-top p-5" alt="...">
@@ -150,6 +150,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>

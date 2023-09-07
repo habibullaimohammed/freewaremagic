@@ -3,8 +3,8 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
-                <h4 class="pb-2">
+            <div class="col-lg-9">
+                <h4 class="">
                     {% if request.path == '/android/'%}
                      Android Apps
                     {% elif request.path == '/windows/' %}
@@ -13,53 +13,44 @@
                     Console Games
                     {% endif%}
                 </h4>
-                <a class="btn btn-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                   aria-controls="offcanvasExample">
-                    {% if request.path == '/android/'%}
-                     Android Apps Categories
-                    {% elif request.path == '/windows/' %}
-                    Windows Apps Categories
-                    {% else%}
-                    Console Games Categories
-                    {% endif%}
+                <div class="border-top border-bottom mb-3 mt-3"><a class="btn dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasCategory" role="button"
+                      aria-controls="offcanvasCategory">
+                    Categories
                 </a>
                 {% if user != None%}
-                <a class="btn btn-dark" href={% if request.path == '/android/' %}"/android/add-android-apps/"{%endif%} role="button">
+                <a class="btn" href={% if request.path == '/android/' %}"/android/add-android-apps/"{%endif%} role="button">
                     Add new app
                 </a>
                 {% endif %}
-
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
-                     aria-labelledby="offcanvasExampleLabel">
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCategory"
+                     aria-labelledby="offcanvasCategoryLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                            {% if request.path == '/android/'%}
-                             Android Apps Categories
-                            {% elif request.path == '/windows/' %}
-                            Windows Apps Categories
-                            {% else%}
-                            Console Games Categories
-                            {% endif%}
+                        <h5 class="offcanvas-title" id="offcanvasCategoryLabel">
+                            Categories
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div>
-                            Some text as placeholder. In real life you can have the elements you have chosen. Like,
-                            text, images, lists, etc.
-                        </div>
-                        <div class="dropdown mt-3">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                Dropdown button
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                        <div class="list-group list-group-flush">
+                          <a  href="/android/Games" class="list-group-item {% if request.path == '/android/Games'%} active {% endif %}" aria-current="true">Games</a>
+                          <a class="list-group-item {% if request.path == '/android/AI'%} active {% endif %}">AI</a>
+                          <a  href="/android/Browsers" class="list-group-item {% if request.path == '/android/Browsers'%} active {% endif %}">Browsers</a>
+                          <a class="list-group-item {% if request.path == '/android/Security & Privacy'%} active {% endif %}">Security & Privacy</a>
+                          <a class="list-group-item {% if request.path == '/android/Business & Productivity'%} active {% endif %}">Business & Productivity</a>
+                          <a class="list-group-item {% if request.path == '/android/Internet & Network'%} active {% endif %}">Internet & Network</a>
+                          <a class="list-group-item {% if request.path == '/android/Multimedia'%} active {% endif %}">Multimedia</a>
+                          <a class="list-group-item {% if request.path == '/android/Development & IT'%} active {% endif %}">Development & IT</a>
+                          <a class="list-group-item {% if request.path == '/android/Education & Reference'%} active {% endif %}">Education & Reference</a>
+                          <a class="list-group-item {% if request.path == '/android/Lifestyle'%} active {% endif %}">Lifestyle</a>
+                          <a class="list-group-item {% if request.path == '/android/Personalization'%} active {% endif %}">Personalization</a>
+                          <a class="list-group-item {% if request.path == '/android/Social & Communication'%} active {% endif %}">Social & Communication</a>
+                          <a class="list-group-item {% if request.path == '/android/Travel & Navigation<'%} active {% endif %}">Travel & Navigation</a>
+                          <a class="list-group-item {% if request.path == '/android/Utilities & Tools'%} active {% endif %}">Utilities & Tools</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="row d-none d-sm-flex">
                     {% for category, apps in android_apps|groupby('category') %}
                     <div class="col-lg-4 mt-3 mb-3">
@@ -70,16 +61,17 @@
                             <ul class="list-group list-group-flush">
                                 {% for app in apps %}
                                 <li class="list-group-item">
+                                            <a class="text-decoration-none" href="/android/software/{{ app.title|replace(' ', '-') }}">
+
                                    <div class="row align-items-center">
                                         <div class="col-auto">
                                             <img src="{{ app.image_url }}" class="img-fluid" width="55" height="55" alt="{{ app.title }}">
                                         </div>
                                         <div class="col">
-                                            <a href="/android/{{ app.category|replace(' ', '-') }}/{{ app.title|replace(' ', '-') }}">
-                                                {{ app.title }}
-                                            </a>
+                                            <p class="text-black">{{ app.title }}</p>
                                         </div>
                                     </div>
+                                            </a>
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -91,6 +83,7 @@
                     {% endfor %}
                 </div>
                 <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar d-lg-none">
+
                     {% for category, apps in android_apps|groupby('category') %}
                     <div class="col-lg-4 mt-3 mb-3">
                         <div class="card">
@@ -100,16 +93,17 @@
                             <ul class="list-group list-group-flush">
                                 {% for app in apps %}
                                 <li class="list-group-item">
+                                     <a class="text-decoration-none" href="/android/software/{{ app.title|replace(' ', '-') }}">
                                    <div class="row align-items-center">
                                         <div class="col-auto">
-                                            <img src="{{ app.image_url }}" class="img-fluid" width="55" height="55" alt="{{ app.title }}">
+                                            <img src="{{ app.image_url }}" class="img-fluid rounded" width="55" height="55" alt="{{ app.title }}">
                                         </div>
                                         <div class="col">
-                                            <a href="/android/{{ app.category|replace(' ', '-') }}/{{ app.title|replace(' ', '-') }}">
-                                                {{ app.title }}
-                                            </a>
+
+                                           <p class="text-black">{{ app.title }}</p>
                                         </div>
                                     </div>
+                                     </a>
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -120,75 +114,32 @@
                     </div>
                     {% endfor %}
                 </div>
-                <div class="col">
-                <h5 class="pb-2">All Apps</h5>
-                <span><small>for windows</small></span>
-                <div class="row g-2">
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
 
-<!--                    <div class="col-lg-3">-->
-<!--                        <div class="card">-->
-<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
-<!--                            <div class="card-body">-->
-<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
-<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-3">-->
-<!--                        <div class="card">-->
-<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
-<!--                            <div class="card-body">-->
-<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
-<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-3">-->
-<!--                        <div class="card">-->
-<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
-<!--                            <div class="card-body">-->
-<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
-<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-3">-->
-<!--                        <div class="card">-->
-<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
-<!--                            <div class="card-body">-->
-<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
-<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-3">-->
-<!--                        <div class="card">-->
-<!--                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">-->
-<!--                            <div class="card-body">-->
-<!--                                <h6 class="card-title text-truncate">Card title</h6>-->
-<!--                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                <div class="col">
+                    <h5 class="pb-2">All Apps</h5>
+                    <span><small>for windows</small></span>
+                    <div class="row g-2">
+                        {% for app in android_apps %}
+                        <div class="col-lg-3">
+                             <a class="text-decoration-none" href="/android/software/{{ app.title|replace(' ', '-') }}">
+                            <div class="card">
+                                <img src="{{ app.image_url }}" class="card-img-top p-5" alt="...">
+                                <div class="card-body">
+                                    <h6 class="card-title text-truncate">{{ app.title }}</h6>
+                                    <p class="card-text text-truncate">{{ app.description }}</p>
+                                </div>
+                            </div>
+                             </a>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
 
                 <div class="text-center mb-3">
-                <a class="btn btn-outline-dark mt-3 px-5" href="#">More Apps</a>
+                <a class="btn btn-outline-dark mt-3 px-5" href="/android/all-apps">More Apps</a>
                 </div>
             </div>
-            </div>
-
-
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <h4>Recommended articles</h4>
                 <div class="row">
                     <div class="col-12 mt-2">
@@ -253,160 +204,49 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8">
-                <h5 class="pb-2">Trending Apps</h5>
-                <span><small>for windows</small></span>
-                <div class="row g-2">
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                                <img src="https://images.sftcdn.net/images/t_app-icon-l/p/f623fc3a-ed58-4419-917d-b83d5ce90df4/73170926/tiny11-ICON.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title text-truncate">Card title</h6>
-                                 <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <section class="pt-5 mb-5">
+                <div class="container">
+                    <h4 class="mb-4">Top download</h4>
+                    <div class="card">
+            <div class="card-body text-center">
+                <div>
+                        <table class="table table-hover">
+                            <tbody>
 
-                <div class="text-center mb-3">
-                <a class="btn btn-outline-dark mt-3 px-5" href="#">Trending Apps</a>
-                </div>
+                            {% for app in android_apps | sort(attribute='download_count', reverse=true) %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>
+                                     <a class="text-decoration-none" href="/android/software/{{ app.title|replace(' ', '-') }}">
+                                    <img alt="{{app.title}}"
+                                         class="pe-2"
+                                         src="{{ app.image_url }}"
+                                         width="50">
+                                         <span class="text-black">{{app.title}}</span>
+                                     </a>
+                                </td>
+                                <td class="d-none d-lg-table-cell">{{ app.download_count }} Downloads</td>
+                                <td>
+                                     <a class="text-decoration-none" href="/android/software/{{ app.title|replace(' ', '-') }}">
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16"
+                                             viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                     </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                <a class="btn btn-outline-dark mt-3 px-5" href="#">View all</a>
             </div>
-
-            <div class="col-lg-4 mb-3">
-                <h4>Top downloads</h4>
-                <span><small>For windows</small></span>
-                <div class="row">
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <h6 class="card-title">whatsapp</h6>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
+        </div>
                 </div>
-                <div class="text-center">
-                    <a class="btn btn-outline-dark mt-3" href="#">more</a>
-                </div>
-            </div>
+            </section>
         </div>
     </div>
 </section>
