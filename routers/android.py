@@ -3,7 +3,6 @@ from starlette import status
 from starlette.responses import RedirectResponse
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-from datetime import datetime, timedelta
 from .auth import get_current_user
 import testModel
 from config.database import engine, SessionLocal
@@ -35,9 +34,19 @@ async def get_windows(request: Request, db: Session = Depends(get_db)):
 
 
 @router.get("/all-apps", response_class=HTMLResponse)
-async def get_windows(request: Request, db: Session = Depends(get_db)):
-    android_apps = db.query(testModel.Android).all()
-    return templates.TemplateResponse("all-apps.html", {"request": request, "android_apps": android_apps})
+async def get_all_android_apps(request: Request, page: int = Query(1, alias="page"), items_per_page: int = Query(2, alias="items_per_page"), db: Session = Depends(get_db)):
+    # Calculate the offset based on the page number and items per page
+    offset = (page - 1) * items_per_page
+
+    # Fetch a subset of Android apps using the offset and items_per_page
+    android_apps = db.query(testModel.Android).offset(offset).limit(items_per_page).all()
+
+    # Calculate the total number of Android apps in the database
+    total_apps = db.query(testModel.Android).count()
+
+    # Calculate the total number of pages
+    total_pages = (total_apps + items_per_page - 1) // items_per_page
+    return templates.TemplateResponse("all-apps.html", {"request": request, "android_apps": android_apps,  "page": page, "items_per_page": items_per_page, "total_pages": total_pages})
 
 
 @router.get("/top-downloads", response_class=HTMLResponse)

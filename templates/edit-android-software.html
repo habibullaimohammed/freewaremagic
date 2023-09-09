@@ -1,110 +1,118 @@
 {% include 'base.html' %}
 
 <div class="container">
-  <div class="card">
-    <div class="card-header">
-      Edit android app
+    <div class="card">
+        <div class="card-header">
+            Edit android app
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="form-group mb-3">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="title_name" value="{{app_details.title}}" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Description</label>
+                    <input type="hidden" id="descriptionInput" name="description" value="">
+                    <div id="editor">
+                        {{app_details.description|safe}}
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Image_url</label>
+                    <input type="url" class="form-control" name="image_url" value="{{app_details.image_url}}" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Download_url</label>
+                    <input type="url" class="form-control" name="download_url" value="{{app_details.download_url}}"
+                           required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Download_url2</label>
+                    <input type="url" class="form-control" name="download_url2" value="{{app_details.download_url2}}"
+                           required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Category</label>
+                    <select name="category_name" class="form-select" id="categorySelect" required>
+                        <option {% if app_details.category==
+                        "Browsers" %} selected="selected" {% endif %} value="Browsers">Browsers</option>
+                        <option {% if app_details.category==
+                        "Business & Productivity" %} selected="selected" {% endif %} value="Business &
+                        Productivity">Business & Productivity</option>
+                        <option {% if app_details.category==
+                        "Games" %} selected="selected" {% endif %} value="Games">Games</option>
+                        <!-- Add other category options here -->
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Subcategory</label>
+                    <select name="sub_category" class="form-select" id="subcategorySelect" required>
+                        <!-- Subcategory options will be dynamically generated using JavaScript -->
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <button onclick="window.location.href='/android/delete/{{app_details.title}}'" type="button"
+                        class="btn btn-danger">Delete
+                </button>
+            </form>
+        </div>
     </div>
-    <div class="card-body">
-      <form method="post">
-        <div class="form-group mb-3">
-          <label>Title</label>
-          <input type="text" class="form-control" name="title_name" value="{{app_details.title}}" required>
-        </div>
-        <div class="form-group mb-3" >
-            <label>Description</label>
-            <input type="hidden" id="descriptionInput" name="description" value="">
-            <div id="editor">
-              {{app_details.description|safe}}
-            </div>
-          </div>
-        <div class="form-group mb-3">
-          <label>Image_url</label>
-          <input type="url" class="form-control" name="image_url" value="{{app_details.image_url}}" required>
-        </div>
-        <div class="form-group mb-3">
-          <label>Download_url</label>
-          <input type="url" class="form-control" name="download_url" value="{{app_details.download_url}}" required>
-        </div>
-        <div class="form-group mb-3">
-          <label>Download_url2</label>
-          <input type="url" class="form-control" name="download_url2" value="{{app_details.download_url2}}" required>
-        </div>
-        <div class="form-group mb-3">
-          <label>Category</label>
-          <select name="category_name" class="form-select" id="categorySelect" required>
-            <option {% if app_details.category == "Browsers" %} selected="selected" {% endif %} value="Browsers">Browsers</option>
-            <option {% if app_details.category == "Business & Productivity" %} selected="selected" {% endif %} value="Business & Productivity">Business & Productivity</option>
-            <option {% if app_details.category == "Games" %} selected="selected" {% endif %} value="Games">Games</option>
-            <!-- Add other category options here -->
-          </select>
-        </div>
-        <div class="form-group mb-3">
-          <label>Subcategory</label>
-          <select name="sub_category" class="form-select" id="subcategorySelect" required>
-            <!-- Subcategory options will be dynamically generated using JavaScript -->
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Edit</button>
-        <button onclick="window.location.href='/android/delete/{{app_details.title}}'" type="button" class="btn btn-danger">Delete</button>
-      </form>
-    </div>
-  </div>
 </div>
 
 
 {% include 'footer.html'%}
 <script>
-  // Define a JavaScript object to store subcategories for each category
-  const subcategories = {
-    "Browsers": ["Add-ons & Tools", "Web browsers"],
-    "Business & Productivity": ["CategoryA", "CategoryB"], // Add subcategories for other categories
-    "Games": ["Action", "Adventure", "Arcade", "Board", "Card", "Casino", "Educational", "Family", "Music", "Puzzle", "Racing", "Role Playing", "Simulation", "Sports", "Strategy", "Trivia", "Utilities", "Word"]
-  };
+    // Define a JavaScript object to store subcategories for each category
+    const subcategories = {
+        "Browsers": ["Add-ons & Tools", "Web browsers"],
+        "Business & Productivity": ["CategoryA", "CategoryB"], // Add subcategories for other categories
+        "Games": ["Action", "Adventure", "Arcade", "Board", "Card", "Casino", "Educational", "Family", "Music", "Puzzle", "Racing", "Role Playing", "Simulation", "Sports", "Strategy", "Trivia", "Utilities", "Word"]
+    };
 
-  // Function to populate the subcategory dropdown based on the selected category
-  function populateSubcategories() {
+    // Function to populate the subcategory dropdown based on the selected category
+    function populateSubcategories() {
+        const categorySelect = document.getElementById("categorySelect");
+        const subcategorySelect = document.getElementById("subcategorySelect");
+        const selectedCategory = categorySelect.value;
+
+        // Clear existing options in subcategory dropdown
+        subcategorySelect.innerHTML = "";
+
+        // Populate subcategory dropdown with options from the selected category
+        const categorySubcategories = subcategories[selectedCategory] || [];
+        categorySubcategories.forEach(subcategory => {
+            const option = document.createElement("option");
+            option.text = subcategory;
+            subcategorySelect.add(option);
+        });
+    }
+
+    // Add an event listener to the category dropdown to trigger subcategory population
     const categorySelect = document.getElementById("categorySelect");
-    const subcategorySelect = document.getElementById("subcategorySelect");
-    const selectedCategory = categorySelect.value;
+    categorySelect.addEventListener("change", populateSubcategories);
 
-    // Clear existing options in subcategory dropdown
-    subcategorySelect.innerHTML = "";
-
-    // Populate subcategory dropdown with options from the selected category
-    const categorySubcategories = subcategories[selectedCategory] || [];
-    categorySubcategories.forEach(subcategory => {
-      const option = document.createElement("option");
-      option.text = subcategory;
-      subcategorySelect.add(option);
-    });
-  }
-
-  // Add an event listener to the category dropdown to trigger subcategory population
-  const categorySelect = document.getElementById("categorySelect");
-  categorySelect.addEventListener("change", populateSubcategories);
-
-  // Initial population of subcategories based on the default category selection
-  populateSubcategories();
+    // Initial population of subcategories based on the default category selection
+    populateSubcategories();
 </script>
 
 <!-- Include the Quill library -->
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
 <script>
-  var quill = new Quill('#editor', {
-    theme: 'snow',
-    placeholder: 'Compose an epic...',
-  });
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        placeholder: 'Compose an epic...',
+    });
 
-  const form = document.querySelector('form');
-  const descriptionInput = document.getElementById('descriptionInput')
+    const form = document.querySelector('form');
+    const descriptionInput = document.getElementById('descriptionInput')
 
-   form.addEventListener('submit', function (event) {
-    // Get the HTML content from the Quill editor
-    const quillHtml = quill.root.innerHTML;
+    form.addEventListener('submit', function (event) {
+        // Get the HTML content from the Quill editor
+        const quillHtml = quill.root.innerHTML;
 
-    // Set the Quill content as the value of the hidden input field
-    descriptionInput.value = quillHtml;
-  });
+        // Set the Quill content as the value of the hidden input field
+        descriptionInput.value = quillHtml;
+    });
 </script>
