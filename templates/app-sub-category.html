@@ -6,7 +6,7 @@
             <div class="col-lg-9">
                 <h4 class="">
                     {% if request.path == '/android/'%}
-                     Android Apps
+                    Android Apps
                     {% elif request.path == '/windows/' %}
                     Windows Apps
                     {% else%}
@@ -15,11 +15,11 @@
                 </h4>
                 <div class="border-top border-bottom mb-3 mt-3">
                     <a class="btn dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasCategory" role="button"
-                      aria-controls="offcanvasExample">
+                       aria-controls="offcanvasExample">
                         {{category}}
                     </a>
                     <a class="btn dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasSubCategory" role="button"
-                      aria-controls="offcanvasExample">
+                       aria-controls="offcanvasExample">
                         {{sub_category}}
                     </a>
                 </div>
@@ -33,20 +33,31 @@
                     </div>
                     <div class="offcanvas-body">
                         <div class="list-group list-group-flush">
-                          <a  href="/android/Games" class="list-group-item {% if request.path == '/android/Games'%} active {% endif %}" aria-current="true">Games</a>
-                          <a class="list-group-item {% if request.path == '/android/AI'%} active {% endif %}">AI</a>
-                          <a  href="/android/Browsers" class="list-group-item {% if request.path == '/android/Browsers'%} active {% endif %}">Browsers</a>
-                          <a class="list-group-item {% if request.path == '/android/Security & Privacy'%} active {% endif %}">Security & Privacy</a>
-                          <a class="list-group-item {% if request.path == '/android/Business & Productivity'%} active {% endif %}">Business & Productivity</a>
-                          <a class="list-group-item {% if request.path == '/android/Internet & Network'%} active {% endif %}">Internet & Network</a>
-                          <a class="list-group-item {% if request.path == '/android/Multimedia'%} active {% endif %}">Multimedia</a>
-                          <a class="list-group-item {% if request.path == '/android/Development & IT'%} active {% endif %}">Development & IT</a>
-                          <a class="list-group-item {% if request.path == '/android/Education & Reference'%} active {% endif %}">Education & Reference</a>
-                          <a class="list-group-item {% if request.path == '/android/Lifestyle'%} active {% endif %}">Lifestyle</a>
-                          <a class="list-group-item {% if request.path == '/android/Personalization'%} active {% endif %}">Personalization</a>
-                          <a class="list-group-item {% if request.path == '/android/Social & Communication'%} active {% endif %}">Social & Communication</a>
-                          <a class="list-group-item {% if request.path == '/android/Travel & Navigation<'%} active {% endif %}">Travel & Navigation</a>
-                          <a class="list-group-item {% if request.path == '/android/Utilities & Tools'%} active {% endif %}">Utilities & Tools</a>
+                            <a href="/android/Games"
+                               class="list-group-item {% if request.path == '/android/Games'%} active {% endif %}"
+                               aria-current="true">Games</a>
+                            <a class="list-group-item {% if request.path == '/android/AI'%} active {% endif %}">AI</a>
+                            <a href="/android/Browsers"
+                               class="list-group-item {% if request.path == '/android/Browsers'%} active {% endif %}">Browsers</a>
+                            <a class="list-group-item {% if request.path == '/android/Security & Privacy'%} active {% endif %}">Security
+                                & Privacy</a>
+                            <a class="list-group-item {% if request.path == '/android/Business & Productivity'%} active {% endif %}">Business
+                                & Productivity</a>
+                            <a class="list-group-item {% if request.path == '/android/Internet & Network'%} active {% endif %}">Internet
+                                & Network</a>
+                            <a class="list-group-item {% if request.path == '/android/Multimedia'%} active {% endif %}">Multimedia</a>
+                            <a class="list-group-item {% if request.path == '/android/Development & IT'%} active {% endif %}">Development
+                                & IT</a>
+                            <a class="list-group-item {% if request.path == '/android/Education & Reference'%} active {% endif %}">Education
+                                & Reference</a>
+                            <a class="list-group-item {% if request.path == '/android/Lifestyle'%} active {% endif %}">Lifestyle</a>
+                            <a class="list-group-item {% if request.path == '/android/Personalization'%} active {% endif %}">Personalization</a>
+                            <a class="list-group-item {% if request.path == '/android/Social & Communication'%} active {% endif %}">Social
+                                & Communication</a>
+                            <a class="list-group-item {% if request.path == '/android/Travel & Navigation<'%} active {% endif %}">Travel
+                                & Navigation</a>
+                            <a class="list-group-item {% if request.path == '/android/Utilities & Tools'%} active {% endif %}">Utilities
+                                & Tools</a>
                         </div>
                     </div>
                 </div>
@@ -60,8 +71,11 @@
                     </div>
                     <div class="offcanvas-body">
                         <div class="list-group list-group-flush">
-                            <a href="/android/Games/Action" class="list-group-item {% if request.path == '/android/Games/Action'%} active {% endif %}" aria-current="true">Action</a>
-                            <a href="/android/Games/Adventure" class="list-group-item {% if request.path == '/android/Games/Adventure'%} active {% endif %}">Adventure</a>
+                            <a href="/android/Games/Action"
+                               class="list-group-item {% if request.path == '/android/Games/Action'%} active {% endif %}"
+                               aria-current="true">Action</a>
+                            <a href="/android/Games/Adventure"
+                               class="list-group-item {% if request.path == '/android/Games/Adventure'%} active {% endif %}">Adventure</a>
                             <a class="list-group-item {% if request.path == '/android/Browsers'%} active {% endif %}">Arcade</a>
                             <a class="list-group-item {% if request.path == '/android/Security & Privacy'%} active {% endif %}">Board</a>
                             <a class="list-group-item {% if request.path == '/android/Business & Productivity'%} active {% endif %}">Card</a>
@@ -71,7 +85,8 @@
                             <a class="list-group-item {% if request.path == '/android/Education & Reference'%} active {% endif %}">Music</a>
                             <a class="list-group-item {% if request.path == '/android/Lifestyle'%} active {% endif %}">Puzzle</a>
                             <a class="list-group-item {% if request.path == '/android/Personalization'%} active {% endif %}">Racing</a>
-                            <a class="list-group-item {% if request.path == '/android/Social & Communication'%} active {% endif %}">Role Playing</a>
+                            <a class="list-group-item {% if request.path == '/android/Social & Communication'%} active {% endif %}">Role
+                                Playing</a>
                             <a class="list-group-item {% if request.path == '/android/Travel & Navigation'%} active {% endif %}">Simulation</a>
                             <a class="list-group-item {% if request.path == '/android/Utilities & Tools'%} active {% endif %}">Sports</a>
                             <a class="list-group-item {% if request.path == '/android/Utilities & Tools'%} active {% endif %}">Strategy</a>
@@ -83,55 +98,61 @@
                 </div>
 
                 <div class="mt-5 mb-5">
-                     <h5>Essential {{category}}</h5>
+                    <h5>Essential {{category}}</h5>
                     <div class="row">
                         <div class="col-lg-4">
-                             <div class="card align-items-center" style="width: 20rem;">
-                      <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                          <div class="row justify-content-center align-items-center">
-                              <div class="col-4">
-                                  <img width="80" height="80" src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
-                              </div>
-                              <div class="col-8">
-                                  <h6 class="card-title">Opera GX</h6>
-                                  <p class="card-text">A free gaming browser for Windows</p>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
+                            <div class="card align-items-center" style="width: 20rem;">
+                                <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg"
+                                     class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="col-4">
+                                            <img width="80" height="80"
+                                                 src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
+                                        </div>
+                                        <div class="col-8">
+                                            <h6 class="card-title">Opera GX</h6>
+                                            <p class="card-text">A free gaming browser for Windows</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="card align-items-center" style="width: 20rem;">
-                      <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                          <div class="row justify-content-center align-items-center">
-                              <div class="col-4">
-                                  <img width="80" height="80" src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
-                              </div>
-                              <div class="col-8">
-                                  <h6 class="card-title">Opera GX</h6>
-                                  <p class="card-text">A free gaming browser for Windows</p>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
+                                <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg"
+                                     class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="col-4">
+                                            <img width="80" height="80"
+                                                 src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
+                                        </div>
+                                        <div class="col-8">
+                                            <h6 class="card-title">Opera GX</h6>
+                                            <p class="card-text">A free gaming browser for Windows</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="card align-items-center" style="width: 20rem;">
-                      <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                          <div class="row justify-content-center align-items-center">
-                              <div class="col-4">
-                                  <img width="80" height="80" src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
-                              </div>
-                              <div class="col-8">
-                                  <h6 class="card-title">Opera GX</h6>
-                                  <p class="card-text">A free gaming browser for Windows</p>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
+                                <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg"
+                                     class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="col-4">
+                                            <img width="80" height="80"
+                                                 src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
+                                        </div>
+                                        <div class="col-8">
+                                            <h6 class="card-title">Opera GX</h6>
+                                            <p class="card-text">A free gaming browser for Windows</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -155,7 +176,7 @@
                     </div>
                 </div>
                 <div class="text-center mb-3">
-                <a class="btn btn-outline-dark mt-3 px-5" href="#">More Apps</a>
+                    <a class="btn btn-outline-dark mt-3 px-5" href="#">More Apps</a>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -255,8 +276,8 @@
                                     </tr>
                                     {% endfor %}
                                     </tbody>
-                                    </table>
-                                </div>
+                                </table>
+                            </div>
                             <a class="btn btn-outline-dark mt-3 px-5" href="#">View all</a>
                         </div>
                     </div>

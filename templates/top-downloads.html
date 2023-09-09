@@ -1,10 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include 'base.html' %}
 
-</body>
-</html>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <h4 class="">
+                    {% if request.path == '/android/top-downloads'%}
+                    Android Apps
+                    {% elif request.path == '/windows/top-downloads' %}
+                    Windows Apps
+                    {% else%}
+                    Console Games
+                    {% endif%}
+                </h4>
+                <div>
+                    ( {{total_apps}} )
+                </div>
+
+                <div class="border-top border-bottom mb-3 mt-3">
+                    <a class="btn dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasCategory" role="button"
+                       aria-controls="offcanvasExample">
+                        <small>Filter By:</small> <span>Top downloads</span>
+                    </a>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCategory"
+                     aria-labelledby="offcanvasCategoryLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasCategoryLabel">
+                            {{category}} categories
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="list-group list-group-flush">
+                            <a href="/android/all-apps"
+                               class="list-group-item {% if request.path == '/android/all-apps'%} active {% endif %}"
+                               {% if request.path == "/android/all-apps"%} aria-current="true"  {% endif %} >All apps</a>
+                            <a href="/android/top-downloads"
+                               class="list-group-item {% if request.path == '/android/top-downloads'%} active {% endif %}" {% if request.path == "/android/all-apps"%} aria-current="true"  {% endif %} >Top download</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% for app in android_apps | sort(attribute='download_count', reverse=true) %}
+                <div class="col">
+                    <div class="list-group list-group-flush">
+                        <a href="/android/software/{{ app.title|replace(' ', '-') }}" class="list-group-item list-group-item-action">
+                            <div class="row align-items-center">
+                                <div class="col-lg-3">
+                                    <img src="{{ app.image_url }}" class="card-img-top p-5" alt="{{ app.title }}">
+                                </div>
+                                <div class="col">
+                                    <h6 class="card-title text-truncate">{{ app.title }}</h6>
+                                    <p class="card-text text-truncate">{{ app.description }}</p>
+                                    <div class="text-success border border-success rounded p-3">
+                                        PROS: User-friendly interface. Handy connection test for faster set-up.
+                                        Extensive torrent download information. Small footprint on drive space and
+                                        system resources.
+                                    </div>
+                                    <div class="mt-3 text-danger border border-danger rounded p-3">
+                                        CONS: No built-in player. Does not offer protection against downloading
+                                        malicious files.
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- Pagination Controls -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                            <a class="page-link" href="?page=1&items_per_page={{ items_per_page }}">First</a>
+                        </li>
+                        <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                            <a class="page-link" href="?page={{ page - 1 }}&items_per_page={{ items_per_page }}">Previous</a>
+                        </li>
+                        {% for p in range(1, total_pages + 1) %}
+                        <li class="page-item {% if page == p %}active{% endif %}">
+                            <a class="page-link" href="?page={{ p }}&items_per_page={{ items_per_page }}">{{ p }}</a>
+                        </li>
+                        {% endfor %}
+                        <li class="page-item {% if page == total_pages %}disabled{% endif %}">
+                            <a class="page-link"
+                               href="?page={{ page + 1 }}&items_per_page={{ items_per_page }}">Next</a>
+                        </li>
+                        <li class="page-item {% if page == total_pages %}disabled{% endif %}">
+                            <a class="page-link"
+                               href="?page={{ total_pages }}&items_per_page={{ items_per_page }}">Last</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <h4>Recommended articles</h4>
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">Article</p>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                    more</small></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a class="btn btn-outline-dark mt-3" href="#">Read more stories</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'footer.html' %}

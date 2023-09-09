@@ -1,38 +1,21 @@
-{% include 'base.html'%}
+{% include 'base.html' %}
 
 <section>
-    <div class="container">
-        <h4 class="mb-3">Latest articles</h4><span><a href="" class="btn btn-dark my-5">add more articles</a></span>
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="row mb-3 g-3">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">Unlock a Year of Premium Features for Just $1 with CCleaner
-                                    Professional!
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mb-3 g-3">
+    <div class="container p-5">
+        <h1>{{title}}</h1>
+        <h2 style="font-size: 1.8vw; color: #6c757d">sub title</h2>
+        <div class="card border-0">
+            <div class="card-body border-bottom">
+                <img class="img-fluid" src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Steam-Deck-2-1.jpg">
+            </div>
+            <div class="card-body border-bottom ">
+                <p>hi</p>
+            </div>
+            <div class="card-body border-bottom ">
+                <h3>You may also like</h3>
+            </div>
+        </div>
+        <div class="row mb-3 g-3">
                     <div class="col-lg-4">
                         <div class="card">
                             <img alt="..."
@@ -195,86 +178,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <h4>Recommended articles</h4>
-                <div class="row">
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a class="btn btn-outline-dark mt-3" href="#">Read more stories</a>
-                </div>
-            </div>
-        </div>
-
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
     </div>
 </section>
 
-{% include 'footer.html' %}
+{% include 'footer.html'%}

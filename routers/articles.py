@@ -14,3 +14,14 @@ templates = Jinja2Templates(directory="templates")
 @router.get("/", response_class=HTMLResponse)
 async def get_windows(request: Request):
     return templates.TemplateResponse("articles.html", {"request": request})
+
+
+@router.get("/add-article", response_class=HTMLResponse)
+async def get_windows(request: Request):
+    return templates.TemplateResponse("add-article.html", {"request": request})
+
+@router.get("/{title}", response_class=HTMLResponse)
+async def get_windows(request: Request, title: str):
+    return templates.TemplateResponse("article-details.html", {"request": request, "title": title})
+
+
