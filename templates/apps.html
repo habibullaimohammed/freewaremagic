@@ -76,15 +76,15 @@
                                 {% for app in apps %}
                                 <li class="list-group-item">
                                     <a class="text-decoration-none"
-                                       href="/android/software/{{ app.title|replace(' ', '-') }}">
+                                       href="/android/software/{{ app.name|replace(' ', '-') }}">
 
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <img src="{{ app.image_url }}" class="img-fluid" width="55" height="55"
-                                                     alt="{{ app.title }}">
+                                                     alt="{{ app.name }}">
                                             </div>
                                             <div class="col">
-                                                <p class="text-black">{{ app.title }}</p>
+                                                <p class="text-black">{{ app.name }}</p>
                                             </div>
                                         </div>
                                     </a>
@@ -111,15 +111,15 @@
                                 {% for app in apps %}
                                 <li class="list-group-item">
                                     <a class="text-decoration-none"
-                                       href="/android/software/{{ app.title|replace(' ', '-') }}">
+                                       href="/android/software/{{ app.name|replace(' ', '-') }}">
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <img src="{{ app.image_url }}" class="img-fluid rounded" width="55"
-                                                     height="55" alt="{{ app.title }}">
+                                                     height="55" alt="{{ app.name }}">
                                             </div>
                                             <div class="col">
 
-                                                <p class="text-black">{{ app.title }}</p>
+                                                <p class="text-black">{{ app.name }}</p>
                                             </div>
                                         </div>
                                     </a>
@@ -141,12 +141,12 @@
                     <div class="row g-2">
                         {% for app in android_apps %}
                         <div class="col-lg-3">
-                            <a class="text-decoration-none" href="/android/software/{{ app.title|replace(' ', '-') }}">
+                            <a class="text-decoration-none" href="/android/software/{{ app.name|replace(' ', '-') }}">
                                 <div class="card">
                                     <img src="{{ app.image_url }}" class="card-img-top p-5" alt="...">
                                     <div class="card-body">
-                                        <h6 class="card-title text-truncate">{{ app.title }}</h6>
-                                        <p class="card-text text-truncate">{{ app.description }}</p>
+                                        <h6 class="card-title text-truncate">{{ app.name }}</h6>
+                                        <p class="card-text text-truncate">{{ app.title }}</p>
                                     </div>
                                 </div>
                             </a>
@@ -227,7 +227,7 @@
             <section class="pt-5 mb-5">
                 <div class="container">
                     <h4 class="mb-4">Top download</h4>
-                    <div class="card">
+                    <div class="card border-0">
                         <div class="card-body text-center">
                             <div>
                                 <table class="table table-hover">
@@ -237,28 +237,25 @@
                                     <tr>
                                         <th scope="row">{{ loop.index }}</th>
                                         <td>
-                                            <a class="text-decoration-none"
-                                               href="/android/software/{{ app.title|replace(' ', '-') }}">
-                                                <img alt="{{app.title}}"
+                                            <a class="text-decoration-none text-dark"
+                                               href="/android/software/{{ app.name|replace(' ', '-') }}">
+                                                <img alt="{{app.name}}"
                                                      class="pe-2"
                                                      src="{{ app.image_url }}"
                                                      width="50">
-                                                <span class="text-black">{{app.title}}</span>
+                                                {{app.name}}
                                             </a>
                                         </td>
                                         <td class="d-none d-lg-table-cell">{{ app.download_count }} Downloads</td>
                                         <td>
-                                            <a class="text-decoration-none"
-                                               href="/android/software/{{ app.title|replace(' ', '-') }}">
-                                                <button class="btn btn-success" type="button">
+                                                <a href="/android/software/{{ app.name|replace(' ', '-') }}" class="btn btn-success" type="button">
                                                     <svg class="bi bi-download" fill="currentColor" height="16"
                                                          viewBox="0 0 16 16" width="16"
                                                          xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                                                         <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
                                                     </svg>
-                                                </button>
-                                            </a>
+                                                </a>
                                         </td>
                                     </tr>
                                     {% endfor %}

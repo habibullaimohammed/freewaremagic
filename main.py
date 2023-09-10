@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Depends
 import testModel
 from config.database import engine, SessionLocal
 from sqlalchemy.orm import Session
@@ -25,9 +25,10 @@ def get_db():
 
 
 @app.get("/", response_class=HTMLResponse)
-async def root(request: Request):
+async def root(request: Request, db: Session = Depends(get_db)):
     user = await get_current_user(request)
-    return templates.TemplateResponse("index.html", {"request": request, "user": user})
+    android_apps = db.query(testModel.Android).all()
+    return templates.TemplateResponse("index.html", {"request": request, "user": user, "android_apps": android_apps})
 
 
 app.include_router(auth.router)

@@ -45,24 +45,14 @@
                 {% for app in android_apps | sort(attribute='download_count', reverse=true) %}
                 <div class="col">
                     <div class="list-group list-group-flush">
-                        <a href="/android/software/{{ app.title|replace(' ', '-') }}" class="list-group-item list-group-item-action">
+                        <a href="/android/software/{{ app.name|replace(' ', '-') }}" class="list-group-item list-group-item-action">
                             <div class="row align-items-center">
                                 <div class="col-lg-3">
-                                    <img src="{{ app.image_url }}" class="card-img-top p-5" alt="{{ app.title }}">
+                                    <img src="{{ app.image_url }}" class="card-img-top p-5" alt="{{ app.name }}">
                                 </div>
                                 <div class="col">
-                                    <h6 class="card-title text-truncate">{{ app.title }}</h6>
-                                    <p class="card-text text-truncate">{{ app.description }}</p>
-                                    <div class="text-success border border-success rounded p-3">
-                                        PROS: User-friendly interface. Handy connection test for faster set-up.
-                                        Extensive torrent download information. Small footprint on drive space and
-                                        system resources.
-                                    </div>
-                                    <div class="mt-3 text-danger border border-danger rounded p-3">
-                                        CONS: No built-in player. Does not offer protection against downloading
-                                        malicious files.
-                                    </div>
-                                    </p>
+                                    <h6 class="card-title text-truncate">{{ app.name }}</h6>
+                                    <p class="card-text text-truncate">{{ app.title }}</p>
                                 </div>
                             </div>
                         </a>

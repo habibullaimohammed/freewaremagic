@@ -97,65 +97,7 @@
                     </div>
                 </div>
 
-                <div class="mt-5 mb-5">
-                    <h5>Essential {{category}}</h5>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card align-items-center" style="width: 20rem;">
-                                <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg"
-                                     class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <div class="row justify-content-center align-items-center">
-                                        <div class="col-4">
-                                            <img width="80" height="80"
-                                                 src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
-                                        </div>
-                                        <div class="col-8">
-                                            <h6 class="card-title">Opera GX</h6>
-                                            <p class="card-text">A free gaming browser for Windows</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card align-items-center" style="width: 20rem;">
-                                <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg"
-                                     class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <div class="row justify-content-center align-items-center">
-                                        <div class="col-4">
-                                            <img width="80" height="80"
-                                                 src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
-                                        </div>
-                                        <div class="col-8">
-                                            <h6 class="card-title">Opera GX</h6>
-                                            <p class="card-text">A free gaming browser for Windows</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card align-items-center" style="width: 20rem;">
-                                <img src="https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/38ed3389-aa83-4498-b0e3-6da8d0791303/2754324082/opera-gx-2754324082.jpg"
-                                     class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <div class="row justify-content-center align-items-center">
-                                        <div class="col-4">
-                                            <img width="80" height="80"
-                                                 src="https://images.sftcdn.net/images/t_app-icon-m/p/38ed3389-aa83-4498-b0e3-6da8d0791303/1328920838/opera-gx-1328920838.png">
-                                        </div>
-                                        <div class="col-8">
-                                            <h6 class="card-title">Opera GX</h6>
-                                            <p class="card-text">A free gaming browser for Windows</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="col">
                     <h5>All Apps</h5>
@@ -164,10 +106,10 @@
                         {% if app.sub_category == sub_category %}
                         <div class="col-lg-3">
                             <div class="card">
-                                <img src="{{ app.image_url }}" class="card-img-top p-5" alt="...">
+                                <img src="{{ app.image_url }}" class="card-img-top p-5" alt="{{ app.name }}">
                                 <div class="card-body">
-                                    <h6 class="card-title text-truncate">{{ app.title }}</h6>
-                                    <p class="card-text text-truncate">{{ app.description }}</p>
+                                    <h6 class="card-title text-truncate">{{ app.name }}</h6>
+                                    <p class="card-text text-truncate">{{ app.title }}</p>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +189,7 @@
             <section class="pt-5 mb-5">
                 <div class="container">
                     <h4 class="mb-4">Top download</h4>
-                    <div class="card">
+                    <div class="card  border-0">
                         <div class="card-body text-center">
                             <div>
                                 <table class="table table-hover">
@@ -257,11 +199,11 @@
                                     <tr>
                                         <th scope="row">{{ loop.index }}</th>
                                         <td>
-                                            <img alt="{{app.title}}"
+                                            <img alt="{{app.name}}"
                                                  class="pe-2"
                                                  src="{{ app.image_url }}"
                                                  width="50">
-                                            {{app.title}}
+                                            {{app.name}}
                                         </td>
                                         <td class="d-none d-lg-table-cell">{{ app.download_count }} Downloads</td>
                                         <td>

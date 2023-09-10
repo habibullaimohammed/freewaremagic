@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Request, Form, HTTPException, Query
+from fastapi import APIRouter, Depends, Request, Form, Query
 from starlette import status
 from starlette.responses import RedirectResponse
 from fastapi.responses import HTMLResponse
@@ -65,23 +65,30 @@ async def get_all_android_apps(request: Request, page: int = Query(1, alias="pag
     return templates.TemplateResponse("top-downloads.html", {"request": request, "android_apps": android_apps,  "page": page, "items_per_page": items_per_page, "total_pages": total_pages, "total_apps": total_apps})
 
 
-@router.get("/software/{title}")
-async def android_app(title: str, request: Request, db: Session = Depends(get_db)):
-    title = title.replace("-", " ")
+@router.get("/{name}/download", response_class=HTMLResponse)
+async def get_windows(name: str, request: Request, db: Session = Depends(get_db)):
+    name = name.replace("-", " ")
     user = await get_current_user(request)
-    app_details = db.query(testModel.Android).filter(testModel.Android.title == title).first()
+    android_apps = db.query(testModel.Android).all()
+    return templates.TemplateResponse("download.html", {"request": request, "android_apps": android_apps, "name": name})
+
+
+@router.get("/software/{name}")
+async def android_app(name: str, request: Request, db: Session = Depends(get_db)):
+    name = name.replace("-", " ")
+    user = await get_current_user(request)
+    app_details = db.query(testModel.Android).filter(testModel.Android.name == name).first()
     android_apps = db.query(testModel.Android).all()
     return templates.TemplateResponse("app-details.html", {"request": request, "app_details": app_details, "user": user,
                                                            "android_apps": android_apps})
 
-@router.get("/software/{title}/download")
-async def android_app(title: str, request: Request, db: Session = Depends(get_db)):
-    title = title.replace("-", " ")
+@router.get("/software/{name}/download")
+async def android_app(name: str, request: Request, db: Session = Depends(get_db)):
+    name = name.replace("-", " ")
     user = await get_current_user(request)
-    app_details = db.query(testModel.Android).filter(testModel.Android.title == title).first()
+    app_details = db.query(testModel.Android).filter(testModel.Android.name == name).first()
     android_apps = db.query(testModel.Android).all()
-    return templates.TemplateResponse("download.html", {"request": request, "app_details": app_details, "user": user,
-                                                           "android_apps": android_apps})
+    return templates.TemplateResponse("download.html", {"request": request, "app_details": app_details, "user": user, "android_apps": android_apps})
 
 
 @router.get("/add-android-apps", response_class=HTMLResponse)
@@ -94,12 +101,17 @@ async def add_new_android_software(request: Request):
 
 @router.post("/add-android-apps", response_class=HTMLResponse)
 async def add_android_app(request: Request,
+                          name: str = Form(),
                           title: str = Form(),
-                          description: str = Form(),
+                          developer: str = Form(),
                           quill_description: str = Form(),
                           image_url: str = Form(),
-                          download_url: str = Form(),
-                          download_url2: str = Form(),
+                          background_image_url: str = Form(),
+                          download_url_getintopc: str = Form(),
+                          download_url_igetintopc: str = Form(),
+                          download_url_softonic: str = Form(),
+                          download_url_filehippo: str = Form(),
+                          download_url_moddroid: str = Form(),
                           category: str = Form(),
                           sub_category: str = Form(),
                           db: Session = Depends(get_db)
@@ -108,12 +120,17 @@ async def add_android_app(request: Request,
     if user is None:
         return RedirectResponse(url="/auth", status_code=status.HTTP_302_FOUND)
     android_model = testModel.Android()
+    android_model.name = name
     android_model.title = title
-    android_model.description = description
+    android_model.developer = developer
     android_model.quill_description = quill_description
     android_model.image_url = image_url
-    android_model.download_url = download_url
-    android_model.download_url2 = download_url2
+    android_model.background_image_url = background_image_url
+    android_model.download_url_getintopc = download_url_getintopc
+    android_model.download_url_igetintopc = download_url_igetintopc
+    android_model.download_url_softonic = download_url_softonic
+    android_model.download_url_filehippo = download_url_filehippo
+    android_model.download_url_moddroid = download_url_moddroid
     android_model.category = category
     android_model.sub_category = sub_category
     android_model.owner_id = user.get("id")
@@ -205,13 +222,13 @@ async def android_category(category: str, sub_category: str, request: Request, d
                                        "sub_category": sub_category})
 
 
-@router.post("/increase-download-count/{title}")
-async def increase_download_count(title: str, db: Session = Depends(get_db)):
+@router.post("/increase-download-count/{name}")
+async def increase_download_count(name: str, db: Session = Depends(get_db)):
     # Assuming title is a unique identifier for the Android app
-    title = title.replace("-", " ")
+    name = name.replace("-", " ")
 
     # Query the Android app by title
-    android_app = db.query(testModel.Android).filter(testModel.Android.title == title).first()
+    android_app = db.query(testModel.Android).filter(testModel.Android.name == name).first()
 
     if android_app:
         # Increase the download count by 1 (you can adjust the increment as needed)
@@ -220,7 +237,7 @@ async def increase_download_count(title: str, db: Session = Depends(get_db)):
         # Commit the changes to the database
         db.commit()
 
-        return {"message": f"Download count for {android_app.title} increased successfully"}
+        return {"message": f"Download count for {android_app.name} increased successfully"}
     else:
         return {"error": "Android app not found"}
 

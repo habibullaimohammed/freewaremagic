@@ -16,26 +16,45 @@ class Users(Base):
     is_active = Column(Boolean, default=True)
 
     android = relationship("Android", back_populates="owner")
+    articles = relationship("Articles", back_populates="owner")
+
+
+class Articles(Base):
+    __tablename__ = "articles"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String)
+    sub_title = Column(String)
+    quill_description = Column(String)
+    image_url = Column(String)
+    owner_id = Column(Integer, ForeignKey("users.id"))
+
+    owner = relationship("Users", back_populates="articles")
 
 
 class Android(Base):
     __tablename__ = "android"
 
     id = Column(Integer, primary_key=True, index=True)
+    name = Column(String)
     title = Column(String)
+    developer = Column(String)
     quill_description = Column(String)
-    description = Column(String)
     image_url = Column(String)
-    download_url = Column(String)
-    download_url2 = Column(String)
+    background_image_url = Column(String)
+    download_url_getintopc = Column(String)
+    download_url_igetintopc = Column(String)
+    download_url_softonic = Column(String)
+    download_url_filehippo = Column(String)
+    download_url_moddroid = Column(String)
     download_count = Column(Integer, default=0)
     category = Column(String)
     sub_category = Column(String)
 
-    created_at = Column(DateTime, default=datetime.utcnow)
     owner_id = Column(Integer, ForeignKey("users.id"))
 
     owner = relationship("Users", back_populates="android")
+
 
 
 

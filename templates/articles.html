@@ -2,36 +2,12 @@
 
 <section>
     <div class="container">
-        <h4 class="mb-3">Latest articles</h4><span><a href="" class="btn btn-dark my-5">add more articles</a></span>
+        <h4 class="mb-3">Latest articles</h4>
+        {% if user != None %}
+            <a class="btn" href={% if request.path== '/android/' %}"/android/add-android-apps/"{%endif%} role="button"> Add more article</a>
+        {% endif %}
         <div class="row">
-            <div class="col-lg-8">
-                <div class="row mb-3 g-3">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">Unlock a Year of Premium Features for Just $1 with CCleaner
-                                    Professional!
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="col-lg-9">
                 <div class="row mb-3 g-3">
                     <div class="col-lg-4">
                         <div class="card">
@@ -196,7 +172,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <h4>Recommended articles</h4>
                 <div class="row">
                     <div class="col-12 mt-2">

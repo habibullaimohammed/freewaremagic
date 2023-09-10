@@ -15,17 +15,15 @@
                     </a>
                 </div>
             </div>
-
-
+<!--            TODO: Work on the side menu navigation link continue from Browsers-->
             <div class="d-none d-md-block">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 flex-row">
                     <li class="nav-item">
-                        <a {% if request.path== '/windows/' %} aria-current="page" {% endif %} class="nav-link me-3 {%
-                        if request.path == '/windows/'%} active {% endif %}" href="/windows/">Apps</a>
+                        <a {% if request.path== '/android/' %} aria-current="page" {% endif %} class="nav-link me-3 {%
+                        if request.path == '/android/'%} active {% endif %}" href="/android">Apps</a>
                     </li>
                     <li class="nav-item">
-                        <a {% if request.path== '/windows/games' %} aria-current="page" {% endif %} class="nav-link me-3
-                        {% if request.path == '/windows/games'%} active {% endif %}" href="/windows/games">Games</a>
+                        <a  class="nav-link me-3" href="#">Games</a>
                     </li>
                     <li class="nav-item me-3">
                         <a {% if request.path== '/articles/' %} aria-current="page" {% endif %} class="nav-link {% if
@@ -38,7 +36,6 @@
                     {% endif %}
                 </ul>
             </div>
-
             <!--      Games-->
             <!--      AI-->
             <!--      Browsers-->
@@ -60,91 +57,70 @@
                     <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class=" nav-item bg-dark ps-3 mb-1 rounded ">
-                            <a aria-current="page" class="nav-link text-light active" href="/articles">News or
-                                Article</a>
-                        </li>
-                        <li class="nav-item bg-dark ps-3 rounded">
-                            <a aria-current="page" class="nav-link text-light active" href="/android">Apps</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasGames" class="nav-link" data-bs-toggle="offcanvas"
-                               href="#offcanvasGames">
-                                <span>Games</span>
-                                <svg class="bi bi-chevron-right" fill="currentColor" height="16" viewBox="0 0 16 16"
-                                     width="16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                                          fill-rule="evenodd"/>
-                                </svg>
+                    <div class="navbar-nav list-group list-group-flush">
 
+                            <a aria-current="page" class="nav-link btn bg-dark text-light mb-1" href="/articles">News or
+                                Article</a>
+
+                            <a aria-controls="offcanvasApps" class="nav-link btn bg-dark text-light mb-1" data-bs-toggle="offcanvas" href="#offcanvasApps">Apps</a>
+
+                            <a aria-controls="offcanvasGame" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
+                               href="#offcanvasGame">
+                                Games
                             </a>
 
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasAI" class="nav-link" data-bs-toggle="offcanvas"
+                            <a aria-controls="offcanvasAI" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasAI"
-                               role="button">AI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasBrowsers" class="nav-link" data-bs-toggle="offcanvas"
+                               role="button">
+                                AI
+                            </a>
+
+                            <a aria-controls="offcanvasBrowsers" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasBrowsers">Browsers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasSecurityPrivacy" class="nav-link" data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasSecurityPrivacy" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasSecurityPrivacy">Security & Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasBusinessProductivty" class="nav-link" data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasBusinessProductivty" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasBusinessProductivty">Business & Productivty</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasInternetNetwork" class="nav-link" data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasInternetNetwork" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasInternetNetwork">Internet & Network</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasMultimedia" class="nav-link" data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasMultimedia" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasMultimedia">Multimedia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasDevelopmentIT" class="nav-link" data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasDevelopmentIT" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasDevelopmentIT">Development & IT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasEducationReference" class="nav-link" data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasEducationReference" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasEducationReference">Education & Reference</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasLifestyle" class="nav-link " data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasLifestyle" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasLifestyle">Lifestyle</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasPersonalization" class="nav-link " data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasPersonalization" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasPersonalization">Personalization</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasSocialCommunication" class="nav-link " data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasSocialCommunication" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasSocialCommunication">Social & Communication</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasTravelNavigation" class="nav-link" data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasTravelNavigation" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasTravelNavigation">Travel & Navigation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a aria-controls="offcanvasUtilitiesTools" class="nav-link" data-bs-toggle="offcanvas"
+
+                            <a aria-controls="offcanvasUtilitiesTools" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasUtilitiesTools">Utilities & Tools</a>
-                        </li>
-                    </ul>
+
+                    </div>
                 </div>
             </div>
 
-            <!--      Games-->
-            <div aria-labelledby="offcanvasGamesLabel" class="offcanvas offcanvas-start" id="offcanvasGames"
+
+            <!-- Apps -->
+            <div aria-labelledby="offcanvasAppsLabel" class="offcanvas offcanvas-start" id="offcanvasApps"
                  tabindex="-1">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasGamesLabel">Games</h5>
-                    <!--                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"-->
-                    <!--                            type="button"></button>-->
+                    <h5 class="offcanvas-title" id="offcanvasAppsLabel">Select OS</h5>
                     <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
                          fill="currentColor"
                          height="16" viewBox="0 0 16 16" width="16"
@@ -155,26 +131,256 @@
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                       <div class="list-group list-group-flush">
+                            <a href="/android" class="list-group-item list-group-item-action">Android</a>
+                           <a href="/windows" class="list-group-item list-group-item-action">Windows</a>
+                           <a href="/mac" class="list-group-item list-group-item-action">Mac</a>
+                           <a href="/iphone" class="list-group-item list-group-item-action">IPhone</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--      AI-->
-            <div aria-labelledby="offcanvasAILabel" class="offcanvas offcanvas-start" id="offcanvasAI" tabindex="-1">
+
+            <!-- Games select os-->
+            <div aria-labelledby="offcanvasGameLabel" class="offcanvas offcanvas-start" id="offcanvasGame"
+                 tabindex="-1">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasAILabel">AI</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
+                    <h5 class="offcanvas-title" id="offcanvasGameLabel">Games: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasGamesAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasGamesAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasGamesWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasGamesWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasGamesMac" class="list-group-item list-group-item-action" aria-controls="offcanvasGamesMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasGamesIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasGames" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- AI select os-->
+            <div aria-labelledby="offcanvasAILabel" class="offcanvas offcanvas-start" id="offcanvasAI"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasAILabel">AI: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasAIAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasAIAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasAIWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasAIWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasAIMac" class="list-group-item list-group-item-action" aria-controls="offcanvasAIMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasAIIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasAIIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Browsers select os-->
+            <div aria-labelledby="offcanvasBrowsersLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsers"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasBrowsersLabel">Browsers: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasBrowsersAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasBrowsersWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasBrowsersMac" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasBrowsersIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI select os-->
+            <div aria-labelledby="offcanvasSecurityPrivacyLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacy"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyLabel">Security & Privacy: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasSecurityPrivacyAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasSecurityPrivacyAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasSecurityPrivacyWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasSecurityPrivacyWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasSecurityPrivacyMac" class="list-group-item list-group-item-action" aria-controls="offcanvasSecurityPrivacyMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasSecurityPrivacyIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasSecurityPrivacyIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Games category android-->
+            <div aria-labelledby="offcanvasGamesAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasGamesAndroid"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasGamesAndroidLabel">Games Android</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+                    <a href="/android/Games">All Games</a>
+                </div>
+            </div>
+
+            <!-- Games category windows-->
+            <div aria-labelledby="offcanvasGamesWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasGamesWindows"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasGamesWindowsLabel">Games Windows</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+
+                </div>
+            </div>
+
+            <!-- Games category mac-->
+            <div aria-labelledby="offcanvasGamesMacLabel" class="offcanvas offcanvas-start" id="offcanvasGamesMac"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasGamesMacLabel">Games Mac</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+
+                </div>
+            </div>
+
+            <!-- Games category iphone-->
+            <div aria-labelledby="offcanvasGamesIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasGamesIphone"
+                 tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasGamesIphoneLabel">Games Iphone</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+
+                </div>
+            </div>
+
+
+            <!-- AI Android -->
+            <div aria-labelledby="offcanvasAIAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasAIAndroid" tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasAIAndroidLabel">AI Android</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+
+                </div>
+            </div>
+            <!-- AI Windows -->
+            <div aria-labelledby="offcanvasAIWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasAIWindows" tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasAIWindowsLabel">AI Windows</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+
+                </div>
+            </div>
+            <!-- AI Mac -->
+            <div aria-labelledby="offcanvasAIMacLabel" class="offcanvas offcanvas-start" id="offcanvasAIMac" tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasAIMacLabel">AI Mac</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+
+                </div>
+            </div>
+            <!-- AI Iphone -->
+            <div aria-labelledby="offcanvasAIIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasAIIphone" tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasAIIphoneLabel">AI Iphone</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+
+                </div>
+            </div>
+
+
+
             <!--      Browsers-->
             <div aria-labelledby="offcanvasBrowsersLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsers"
                  tabindex="-1">
