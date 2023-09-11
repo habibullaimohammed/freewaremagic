@@ -453,80 +453,18 @@
     <div class="container pt-5 ">
         <h4 class="mb-3">Articles</h4>
         <div class="row mb-3 g-3">
+                {% for article in articles %}
             <div class="col-lg-4">
-                <div class="card">
-                    <img alt="..."
+                <a href="/articles/{{article.title|replace(' ', '-')}}" class="card text-decoration-none">
+                    <img alt="{{article.title}}"
                          class="card-img-top" loading="lazy"
-                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                         src="{{article.image_url}}">
                     <div class="card-body">
-                        <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner Professional!
-                        </h4>
+                        <h4 class="card-title">{{article.title}}</h4>
                     </div>
-                </div>
+                </a>
             </div>
-
-            <div class="col-lg-4">
-                <div class="card">
-                    <img alt="..."
-                         class="card-img-top" loading="lazy"
-                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            AirTag: from finding the keys to locking up criminals
-                        </h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="card">
-                    <img alt="..."
-                         class="card-img-top" loading="lazy"
-                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                    <div class="card-body">
-                        <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner Professional!
-                        </h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="card">
-                    <img alt="..."
-                         class="card-img-top" loading="lazy"
-                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            AirTag: from finding the keys to locking up criminals
-                        </h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="card">
-                    <img alt="..."
-                         class="card-img-top" loading="lazy"
-                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                    <div class="card-body">
-                        <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner Professional!
-                        </h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="card">
-                    <img alt="..."
-                         class="card-img-top" loading="lazy"
-                         src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            AirTag: from finding the keys to locking up criminals
-                        </h4>
-                    </div>
-                </div>
-            </div>
+                {% endfor %}
         </div>
         <div class="text-center">
             <a class="btn btn-outline-dark mt-3 px-5 mb-5" href="/articles">View all</a>

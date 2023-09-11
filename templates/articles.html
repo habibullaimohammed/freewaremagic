@@ -4,232 +4,45 @@
     <div class="container">
         <h4 class="mb-3">Latest articles</h4>
         {% if user != None %}
-            <a class="btn" href={% if request.path== '/android/' %}"/android/add-android-apps/"{%endif%} role="button"> Add more article</a>
+            <a class="btn" href="/articles/add-article" role="button"> Add more article</a>
         {% endif %}
         <div class="row">
             <div class="col-lg-9">
                 <div class="row mb-3 g-3">
+            {% for article in all_articles %}
                     <div class="col-lg-4">
-                        <div class="card">
+                        <a class="text-decoration-none" href="/articles/{{article.title|replace(' ', '-') }}">
+                            <div class="card">
                             <img alt="..."
                                  class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                                 src="{{article.image_url}}">
                             <div class="card-body">
-                                <h4 class="card-text h5">Unlock a Year of Premium Features for Just $1 with CCleaner
-                                    Professional!
-                                </h4>
+                                <h4 class="card-text h5">{{article.title}}</h4>
                             </div>
                         </div>
+                        </a>
                     </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">Unlock a Year of Premium Features for Just $1 with CCleaner
-                                    Professional!
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                            <div class="card-body">
-                                <h4 class="ccard-text h5">Unlock a Year of Premium Features for Just $1 with CCleaner
-                                    Professional!
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor%}
                 </div>
             </div>
             <div class="col-lg-3">
                 <h4>Recommended articles</h4>
                 <div class="row">
                     <div class="col-12 mt-2">
-                        <div class="card">
+                        {% for article in articles%}
+                        <div class="card mb-1">
                             <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
+                                <img src="{{article.image_url}}" class="rounded" width="100">
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-truncate">{{article.title}}</p>
+                                <a href="/articles/{{article.title|replace(' ','-') }}" class="card-text text-decoration-none"><small class="text-body-secondary">Read
                                     more</small></a>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Article</p>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="card-text text-decoration-none"><small class="text-body-secondary">Read
-                                    more</small></a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="text-center">
                     <a class="btn btn-outline-dark mt-3" href="#">Read more stories</a>
@@ -237,19 +50,29 @@
             </div>
         </div>
 
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
+        <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                            <a class="page-link" href="?page=1&items_per_page={{ items_per_page }}">First</a>
+                        </li>
+                        <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                            <a class="page-link" href="?page={{ page - 1 }}&items_per_page={{ items_per_page }}">Previous</a>
+                        </li>
+                        {% for p in range(1, total_pages + 1) %}
+                        <li class="page-item {% if page == p %}active{% endif %}">
+                            <a class="page-link" href="?page={{ p }}&items_per_page={{ items_per_page }}">{{ p }}</a>
+                        </li>
+                        {% endfor %}
+                        <li class="page-item {% if page == total_pages %}disabled{% endif %}">
+                            <a class="page-link"
+                               href="?page={{ page + 1 }}&items_per_page={{ items_per_page }}">Next</a>
+                        </li>
+                        <li class="page-item {% if page == total_pages %}disabled{% endif %}">
+                            <a class="page-link"
+                               href="?page={{ total_pages }}&items_per_page={{ items_per_page }}">Last</a>
+                        </li>
+                    </ul>
+                </nav>
     </div>
 </section>
 

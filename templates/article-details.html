@@ -2,181 +2,32 @@
 
 <section>
     <div class="container p-5">
-        <h1>{{title}}</h1>
-        <h2 style="font-size: 1.8vw; color: #6c757d">sub title</h2>
+        <h1>{{article_details.title}}</h1>
+        <h2 style="font-size: 1.8vw; color: #6c757d">{{article_details.sub_title}}</h2>
         <div class="card border-0">
             <div class="card-body border-bottom">
-                <img class="img-fluid" src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Steam-Deck-2-1.jpg">
+                <img class="img-fluid" src="{{article_details.image_url}}">
             </div>
             <div class="card-body border-bottom ">
-                <p>hi</p>
+                <p>{{article_details.quill_description|safe}}</p>
             </div>
             <div class="card-body border-bottom ">
                 <h3>You may also like</h3>
             </div>
         </div>
         <div class="row mb-3 g-3">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">Unlock a Year of Premium Features for Just $1 with CCleaner
-                                    Professional!
-                                </h4>
-                            </div>
-                        </div>
+            {% for article in articles %}
+            <div class="col-lg-4 mt-5">
+                <a href="/articles/{{article.title|replace(' ', '-')}}" class="card text-decoration-none">
+                    <img alt="{{article.title}}"
+                         class="card-img-top" loading="lazy"
+                         src="{{article.image_url}}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{article.title}}</h4>
                     </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">Unlock a Year of Premium Features for Just $1 with CCleaner
-                                    Professional!
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
-                            <div class="card-body">
-                                <h4 class="ccard-text h5">Unlock a Year of Premium Features for Just $1 with CCleaner
-                                    Professional!
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img alt="..."
-                                 class="card-img-top" loading="lazy"
-                                 src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
-                            <div class="card-body">
-                                <h4 class="card-text h5">
-                                    AirTag: from finding the keys to locking up criminals
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
+                </a>
+            </div>
+                {% endfor %}
                 </div>
     </div>
 </section>

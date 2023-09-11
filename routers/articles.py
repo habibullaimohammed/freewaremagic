@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request, Form, Depends
+from fastapi import APIRouter, Request, Form, Depends, Query
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
@@ -28,9 +28,16 @@ def get_db():
 
 
 @router.get("/", response_class=HTMLResponse)
-async def get_windows(request: Request):
-    user = get_current_user(request)
-    return templates.TemplateResponse("articles.html", {"request": request, "user": user})
+async def get_windows(request: Request, page: int = Query(1, alias="page"), items_per_page: int = Query(1, alias="items_per_page"), db: Session = Depends(get_db)):
+    user = await get_current_user(request)
+
+    offset = (page - 1) * items_per_page
+
+    articles = db.query(testModel.Articles).all()
+    all_articles = db.query(testModel.Articles).offset(offset).limit(items_per_page).all()
+    total_article = db.query(testModel.Articles).count()
+    total_pages = (total_article + items_per_page - 1) // items_per_page
+    return templates.TemplateResponse("articles.html", {"request": request, "user": user, "articles": articles, "all_articles": all_articles, "page": page, "items_per_page": items_per_page, "total_pages": total_pages, "total_article": total_article})
 
 
 @router.get("/add-article", response_class=HTMLResponse)
@@ -63,7 +70,10 @@ async def add_android_app(request: Request,
 
 
 @router.get("/{title}", response_class=HTMLResponse)
-async def get_windows(request: Request, title: str):
-    return templates.TemplateResponse("article-details.html", {"request": request, "title": title})
+async def get_windows(request: Request, title: str, db: Session = Depends(get_db)):
+    title = title.replace("-", " ")
+    articles = db.query(testModel.Articles).all()
+    article_details = db.query(testModel.Articles).filter(testModel.Articles.title == title).first()
+    return templates.TemplateResponse("article-details.html", {"request": request, "title": title, "article_details": article_details, "articles": articles})
 
 

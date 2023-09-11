@@ -28,7 +28,8 @@ def get_db():
 async def root(request: Request, db: Session = Depends(get_db)):
     user = await get_current_user(request)
     android_apps = db.query(testModel.Android).all()
-    return templates.TemplateResponse("index.html", {"request": request, "user": user, "android_apps": android_apps})
+    articles = db.query(testModel.Articles).all()
+    return templates.TemplateResponse("index.html", {"request": request, "user": user, "android_apps": android_apps, "articles": articles})
 
 
 app.include_router(auth.router)
