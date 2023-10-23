@@ -1,7 +1,7 @@
 from starlette import status
 from starlette.responses import RedirectResponse
 from fastapi import APIRouter, Depends, Request, Form
-import testModel
+import models
 from config.database import engine, SessionLocal
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
@@ -16,7 +16,7 @@ router = APIRouter(
     responses={404:{"description": "Not Found"}}
 )
 
-testModel.Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=engine)
 
 templates = Jinja2Templates(directory="templates")
 
@@ -47,7 +47,7 @@ async def user_password_change(request: Request, username: str = Form(), passwor
     user = await get_current_user(request)
     if user is None:
         return RedirectResponse(url="/auth", status_code=status.HTTP_302_FOUND)
-    user_data = db.query(testModel.Users).filter(testModel.Users.username == username).first()
+    user_data = db.query(models.Users).filter(models.Users.username == username).first()
     msg = "Invalid username or password"
 
     if user_data is not None:

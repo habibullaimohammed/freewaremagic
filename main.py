@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request, Depends
-import testModel
+import models
 from config.database import engine, SessionLocal
 from sqlalchemy.orm import Session
 from fastapi.responses import HTMLResponse
@@ -11,7 +11,7 @@ from routers.auth import get_current_user
 from routers import windows, mac, iphone, android, consoleGames, articles, contact, cookiePolicy, privacyPolicy, termOfUse, users, auth
 
 app = FastAPI()
-testModel.Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=engine)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
@@ -27,8 +27,8 @@ def get_db():
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request, db: Session = Depends(get_db)):
     user = await get_current_user(request)
-    android_apps = db.query(testModel.Android).all()
-    articles = db.query(testModel.Articles).all()
+    android_apps = db.query(models.Android).all()
+    articles = db.query(models.Articles).all()
     return templates.TemplateResponse("index.html", {"request": request, "user": user, "android_apps": android_apps, "articles": articles})
 
 

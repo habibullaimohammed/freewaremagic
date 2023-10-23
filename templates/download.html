@@ -1,11 +1,232 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Download</h1>
-    {{name}}
-</body>
-</html>
+{% include 'base.html'%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="row align-items-center">
+                <div class="">
+                    <img width="100" height="100"
+                         src="{{ app_details.image_url }}">
+                    <h3 class="mx-3 d-inline">{{app_details.name}}</h3>
+                </div>
+                <div>
+                    <a class="btn btn-dark w-100"
+                       href="/android/edit-android-apps/{{app_details.title|replace(' ', '-')}}" target="_self">Edit</a>
+                </div>
+                <div>
+                    <!-- Add a button to increase the download count -->
+                    <a id="increaseDownloadButton" class="btn btn-success mt-2 w-100">Increase Download Count</a>
+                </div>
+                <div>
+                    <!-- Add a button to increase the download count -->
+                    <a href="/windows/software/{{app_details.name|replace(' ', '-')}}/download"  class="btn btn-success mt-2 w-100"> Download</a>
+                </div>
+            </div>
+            <nav class="mt-5">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">Description
+                    </button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">App spec
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                     tabindex="0">
+                    <h3 class="my-2">{{ app_details.title }}</h3>
+                     {{app_details.quill_description|safe}}
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                     tabindex="0">
+                    <div class="card mt-3">
+                        <img src="{{ app_details.background_image_url }}"
+                             class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">App specs</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Platform<br>
+                                <span class="fw-bold"><small>Android</small></span>
+                            </li>
+                            <li class="list-group-item">
+                                OS<br>
+                                <span class="fw-bold"><small>Android</small></span>
+                            </li>
+                            <li class="list-group-item">
+                                Language<br>
+                                <span class="fw-bold"><small>English</small></span>
+                            </li>
+                            <li class="list-group-item">
+                                Downloads<br>
+                                <span class="fw-bold"><small>{{ app_details.download_count }}</small></span>
+                            </li>
+                            <li class="list-group-item">
+                                Developer<br>
+                                <span class="fw-bold"><small>{{app_details.developer}}</small></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mt-4">
+            <h4 class="mb-4">Top download</h4>
+            <div class="card border-0">
+                <div class="card-body text-center">
+                    <div>
+                        <table class="table table-hover">
+                            <tbody>
+                            {% for app in android_apps | sort(attribute='download_count', reverse=true)%}
+                            <tr>
+                                <th scope="row">
+                                    <img alt="{{app.name}}"
+                                         class="pe-2"
+                                         src="{{ app.image_url }}"
+                                         width="50">
+                                </th>
+                                <td>
+                                    {{app.name}}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <a class="btn btn-outline-dark mt-3 px-5" href="#">View all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h5 class="mt-5">Explorer</h5>
+    <div class="row g-2">
+        {% for app in android_apps %}
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="{{ app.image_url }}" class="card-img-top p-5" alt="{{ app.name }}">
+                <div class="card-body">
+                    <h6 class="card-title text-truncate">{{ app.name }}</h6>
+                    <p class="card-text text-truncate">{{ app.title }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <section>
+        <div class="container pt-5 ">
+            <h4 class="mb-3">Article</h4>
+            <div class="row mb-3 g-3">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img alt="..."
+                             class="card-img-top" loading="lazy"
+                             src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                        <div class="card-body">
+                            <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner
+                                Professional!
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img alt="..."
+                             class="card-img-top" loading="lazy"
+                             src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                AirTag: from finding the keys to locking up criminals
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img alt="..."
+                             class="card-img-top" loading="lazy"
+                             src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                        <div class="card-body">
+                            <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner
+                                Professional!
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img alt="..."
+                             class="card-img-top" loading="lazy"
+                             src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                AirTag: from finding the keys to locking up criminals
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img alt="..."
+                             class="card-img-top" loading="lazy"
+                             src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/08/CC_1.jpg">
+                        <div class="card-body">
+                            <h4 class="card-title">Unlock a Year of Premium Features for Just $1 with CCleaner
+                                Professional!
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img alt="..."
+                             class="card-img-top" loading="lazy"
+                             src="https://articles-img.sftcdn.net/f_auto,t_article_cover_xl/auto-mapping-folder/sites/3/2023/09/Untitled-2-1024x576-1.jpg">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                AirTag: from finding the keys to locking up criminals
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% include 'footer.html'%}
+
+
+<script>
+    // JavaScript code to make an AJAX request when the button is clicked
+    document.getElementById("increaseDownloadButton").addEventListener("click", function () {
+        // Extract the app title from the template variable
+        var appName = "{{ app_details.name }}";
+        var encodedAppName = encodeURIComponent(appName);
+
+        // Send a POST request to the FastAPI endpoint to increase the download count
+        fetch(`/windows/increase-download-count/${encodedAppName}`, {
+            method: "POST"
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Optionally, you can update the UI to reflect the increased download count
+                    alert(`Download count for ${appName} increased successfully.`);
+                } else {
+                    alert(`Failed to increase download count for ${appName}.`);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while increasing the download count.");
+            });
+    });
+</script>

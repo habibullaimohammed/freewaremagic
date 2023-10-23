@@ -14,42 +14,7 @@
                         Freeware Magic
                     </a>
                 </div>
-            </div>
-<!--            TODO: Work on the side menu navigation link continue from Browsers-->
-            <div class="d-none d-md-block">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 flex-row">
-                    <li class="nav-item">
-                        <a {% if request.path== '/android/' %} aria-current="page" {% endif %} class="nav-link me-3 {%
-                        if request.path == '/android/'%} active {% endif %}" href="/android">Apps</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  class="nav-link me-3" href="#">Games</a>
-                    </li>
-                    <li class="nav-item me-3">
-                        <a {% if request.path== '/articles/' %} aria-current="page" {% endif %} class="nav-link {% if
-                        request.path == '/articles/'%} active {% endif %}" href="/articles">Articles</a>
-                    </li>
-                    {% if user != None%}
-                    <li class="nav-item me-3">
-                        <a class="nav-link" href="/auth/logout">Logout</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-            <!--      Games-->
-            <!--      AI-->
-            <!--      Browsers-->
-            <!--      Security and Privacy-->
-            <!--      Business&Productivty-->
-            <!--      Internet and Network-->
-            <!--      Multimedia-->
-            <!--      Development and IT-->
-            <!--      Education and Reference-->
-            <!--      Lifestyle-->
-            <!--      Personalization-->
-            <!--      Social and Communication-->
-            <!--      Travel and Navigation-->
-            <!--      Utilities and Tools-->
+            </div> <!--For logo-->
             <div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar"
                  tabindex="-1">
                 <div class="offcanvas-header">
@@ -63,6 +28,8 @@
                                 Article</a>
 
                             <a aria-controls="offcanvasApps" class="nav-link btn bg-dark text-light mb-1" data-bs-toggle="offcanvas" href="#offcanvasApps">Apps</a>
+                            <a aria-controls="offcanvasConsoleGames" class="nav-link btn bg-dark text-light mb-1" data-bs-toggle="offcanvas" href="#offcanvasApps">Console Games</a>
+                            <a aria-controls="offcanvasGOGGames" class="nav-link btn bg-dark text-light mb-1" data-bs-toggle="offcanvas" href="#offcanvasApps">GOG Games</a>
 
                             <a aria-controls="offcanvasGame" class="nav-link list-group-item list-group-item-action" data-bs-toggle="offcanvas"
                                href="#offcanvasGame">
@@ -116,8 +83,8 @@
             </div>
 
 
-            <!-- Apps -->
-            <div aria-labelledby="offcanvasAppsLabel" class="offcanvas offcanvas-start" id="offcanvasApps"
+            <!-- Apps select os -->
+            <span aria-labelledby="offcanvasAppsLabel" class="offcanvas offcanvas-start" id="offcanvasApps"
                  tabindex="-1">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasAppsLabel">Select OS</h5>
@@ -139,10 +106,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </span>
 
             <!-- Games select os-->
-            <div aria-labelledby="offcanvasGameLabel" class="offcanvas offcanvas-start" id="offcanvasGame"
+            <span>
+                <div aria-labelledby="offcanvasGameLabel" class="offcanvas offcanvas-start" id="offcanvasGame"
                  tabindex="-1">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasGameLabel">Games: Select OS</h5>
@@ -166,8 +134,82 @@
                 </div>
             </div>
 
+                <!-- Games category android-->
+                <div aria-labelledby="offcanvasGamesAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasGamesAndroid"
+                     tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasGamesAndroidLabel">Games Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+                        <a href="/android/Games">All Games</a>
+                    </div>
+                </div>
+
+                <!-- Games category windows-->
+                <div aria-labelledby="offcanvasGamesWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasGamesWindows"
+                     tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasGamesWindowsLabel">Games Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+
+                <!-- Games category mac-->
+                <div aria-labelledby="offcanvasGamesMacLabel" class="offcanvas offcanvas-start" id="offcanvasGamesMac"
+                     tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasGamesMacLabel">Games Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+
+                <!-- Games category iphone-->
+                <div aria-labelledby="offcanvasGamesIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasGamesIphone"
+                     tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasGamesIphoneLabel">Games Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </span>
+
             <!-- AI select os-->
-            <div aria-labelledby="offcanvasAILabel" class="offcanvas offcanvas-start" id="offcanvasAI"
+            <span>
+                <div aria-labelledby="offcanvasAILabel" class="offcanvas offcanvas-start" id="offcanvasAI"
                  tabindex="-1">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasAILabel">AI: Select OS</h5>
@@ -191,33 +233,167 @@
                 </div>
             </div>
 
-            <!-- Browsers select os-->
-            <div aria-labelledby="offcanvasBrowsersLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsers"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBrowsersLabel">Browsers: Select OS</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
+                <!-- AI Android -->
+                <div aria-labelledby="offcanvasAIAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasAIAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasAIAndroidLabel">AI Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
                 </div>
-                <div class="offcanvas-body">
-                    <div>
-                       <div class="list-group list-group-flush">
-                            <a href="#offcanvasBrowsersAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersAndroid" data-bs-toggle="offcanvas">Android</a>
-                           <a href="#offcanvasBrowsersWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersWindows" data-bs-toggle="offcanvas">Windows</a>
-                           <a href="#offcanvasBrowsersMac" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersMac" data-bs-toggle="offcanvas">Mac</a>
-                           <a href="#offcanvasBrowsersIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersIphone" data-bs-toggle="offcanvas">Iphone</a>
+                <!-- AI Windows -->
+                <div aria-labelledby="offcanvasAIWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasAIWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasAIWindowsLabel">AI Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!-- AI Mac -->
+                <div aria-labelledby="offcanvasAIMacLabel" class="offcanvas offcanvas-start" id="offcanvasAIMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasAIMacLabel">AI Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!-- AI Iphone -->
+                <div aria-labelledby="offcanvasAIIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasAIIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasAIIphoneLabel">AI Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </span>
+
+            <!-- Browsers select os-->
+            <sapn>
+                <div aria-labelledby="offcanvasBrowsersLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsers"
+                     tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBrowsersLabel">Browsers: Select OS</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div>
+                           <div class="list-group list-group-flush">
+                                <a href="#offcanvasBrowsersAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersAndroid" data-bs-toggle="offcanvas">Android</a>
+                               <a href="#offcanvasBrowsersWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersWindows" data-bs-toggle="offcanvas">Windows</a>
+                               <a href="#offcanvasBrowsersMac" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersMac" data-bs-toggle="offcanvas">Mac</a>
+                               <a href="#offcanvasBrowsersIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasBrowsersIphone" data-bs-toggle="offcanvas">Iphone</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <!--Browsers Android-->
+                <div aria-labelledby="offcanvasBrowsersAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsersAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBrowsersAndroidLabel">Browser Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasBrowsers" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Browsers Windows-->
+                <div aria-labelledby="offcanvasBrowsersWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsersWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBrowsersWindowsLabel">Browser Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasBrowsers" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Browsers Mac-->
+                <div aria-labelledby="offcanvasBrowsersMacLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsersMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBrowsersMacLabel">Browser Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasBrowsers" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Browsers Iphone-->
+                <div aria-labelledby="offcanvasBrowsersIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsersIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBrowsersIphoneLabel">Browser Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasBrowsers" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </sapn>
 
             <!-- Security and Privacy os-->
-            <div aria-labelledby="offcanvasSecurityPrivacyLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacy"
+            <span>
+                <div aria-labelledby="offcanvasSecurityPrivacyLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacy"
                  tabindex="-1">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyLabel">Security & Privacy: Select OS</h5>
@@ -240,379 +416,653 @@
                     </div>
                 </div>
             </div>
+                <!--Security Privacy Android-->
+                <div aria-labelledby="offcanvasSecurityPrivacyAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacyAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyAndroidLabel">Security Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasSecurityPrivacy" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
 
-            <!-- Games category android-->
-            <div aria-labelledby="offcanvasGamesAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasGamesAndroid"
+                    </div>
+                </div>
+                <!--Security Privacy Windows-->
+                <div aria-labelledby="offcanvasSecurityPrivacyWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacyWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyWindowsLabel">Security Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasSecurityPrivacy" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Security Privacy Mac-->
+                <div aria-labelledby="offcanvasSecurityPrivacyMacLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacyMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyMacLabel">Security Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasSecurityPrivacy" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Security Privacy Iphone-->
+                <div aria-labelledby="offcanvasSecurityPrivacyIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacyIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyIphoneLabel">Security Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasSecurityPrivacy" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </span>
+
+            <!-- Business & Prductivity os-->
+            <span>
+                <div aria-labelledby="offcanvasBusinessProductivtyLabel" class="offcanvas offcanvas-start" id="offcanvasBusinessProductivty"
                  tabindex="-1">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasGamesAndroidLabel">Games Android</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
+                    <h5 class="offcanvas-title" id="offcanvasBusinessProductivtyLabel">Business & Productivty: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
                          fill="currentColor"
                          height="16" viewBox="0 0 16 16" width="16"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
                               fill-rule="evenodd"/>
                     </svg>
-                </div>
-                <div class="offcanvas-body">
-                    <a href="/android/Games">All Games</a>
-                </div>
-            </div>
-
-            <!-- Games category windows-->
-            <div aria-labelledby="offcanvasGamesWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasGamesWindows"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasGamesWindowsLabel">Games Windows</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-
-            <!-- Games category mac-->
-            <div aria-labelledby="offcanvasGamesMacLabel" class="offcanvas offcanvas-start" id="offcanvasGamesMac"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasGamesMacLabel">Games Mac</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-
-            <!-- Games category iphone-->
-            <div aria-labelledby="offcanvasGamesIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasGamesIphone"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasGamesIphoneLabel">Games Iphone</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasGame" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-
-
-            <!-- AI Android -->
-            <div aria-labelledby="offcanvasAIAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasAIAndroid" tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasAIAndroidLabel">AI Android</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-            <!-- AI Windows -->
-            <div aria-labelledby="offcanvasAIWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasAIWindows" tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasAIWindowsLabel">AI Windows</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-            <!-- AI Mac -->
-            <div aria-labelledby="offcanvasAIMacLabel" class="offcanvas offcanvas-start" id="offcanvasAIMac" tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasAIMacLabel">AI Mac</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-            <!-- AI Iphone -->
-            <div aria-labelledby="offcanvasAIIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasAIIphone" tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasAIIphoneLabel">AI Iphone</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasAI" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-
-            <!--Browsers Android-->
-            <div aria-labelledby="offcanvasBrowsersAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsersAndroid" tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBrowsersAndroidLabel">Browser Android</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasBrowsers" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-            <!--Browsers Windows-->
-            <div aria-labelledby="offcanvasBrowsersWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasBrowsersWindows" tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBrowsersWindowsLabel">Browser Windows</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasBrowsers" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-
-            <!--Security Privacy Android-->
-            <div aria-labelledby="offcanvasSecurityPrivacyAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacyAndroid" tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyAndroidLabel">Security Android</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasBrowsers" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-            <!--Security Privacy Windows-->
-            <div aria-labelledby="offcanvasSecurityPrivacyWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasSecurityPrivacyWindows" tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasSecurityPrivacyWindowsLabel">Security Windows</h5>
-                    <svg aria-label="Close" data-bs-target="#offcanvasBrowsers" data-bs-toggle="offcanvas"
-                         fill="currentColor"
-                         height="16" viewBox="0 0 16 16" width="16"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                              fill-rule="evenodd"/>
-                    </svg>
-                </div>
-                <div class="offcanvas-body">
-
-                </div>
-            </div>
-
-
-            <!--      Business & Productivty-->
-            <div aria-labelledby="offcanvasBusinessProductivty" class="offcanvas offcanvas-start"
-                 id="offcanvasBusinessProductivty"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBusinessProductivtyLabel">Business & Productivity</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasBusinessProductivtyAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasBusinessProductivtyAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasBusinessProductivtyWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasBusinessProductivtyWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasBusinessProductivtyMac" class="list-group-item list-group-item-action" aria-controls="offcanvasBusinessProductivtyMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasBusinessProductivtyIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasBusinessProductivtyIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--      Internet and Network-->
-            <div aria-labelledby="offcanvasInternetNetwork" class="offcanvas offcanvas-start"
-                 id="offcanvasInternetNetwork"
+
+                <!--Business Pruductivity Android-->
+                <div aria-labelledby="offcanvasBusinessProductivtyAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasBusinessProductivtyAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBusinessProductivtyAndroidLabel">Business Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasBusinessProductivty" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+                <!--Business Pruductivity Windows-->
+                <div aria-labelledby="offcanvasBusinessProductivtyWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasBusinessProductivtyWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBusinessProductivtyWindowsLabel">Business Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasBusinessProductivty" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Business Pruductivity Mac-->
+                <div aria-labelledby="offcanvasBusinessProductivtyMacLabel" class="offcanvas offcanvas-start" id="offcanvasBusinessProductivtyMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBusinessProductivtyMacLabel">Business Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasBusinessProductivty" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Business Pruductivity Iphone-->
+                <div aria-labelledby="offcanvasBusinessProductivtyIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasBusinessProductivtyIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBusinessProductivtyIphoneLabel">Business Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasSecurityPrivacy" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </span>
+
+            <!-- Internet & Network os-->
+            <span>
+                <div aria-labelledby="offcanvasBusinessProductivtyLabel" class="offcanvas offcanvas-start" id="offcanvasInternetNetwork"
                  tabindex="-1">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasInternetNetworkLabel">Internet & Network</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
+                    <h5 class="offcanvas-title" id="offcanvasInternetNetworkLabel">"Internet & Network: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasInternetNetworkAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasInternetNetworkAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasInternetNetworkWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasInternetNetworkWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasInternetNetworkMac" class="list-group-item list-group-item-action" aria-controls="offcanvasInternetNetworkMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasInternetNetworkIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasInternetNetworkIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--      Multimedia-->
-            <div aria-labelledby="offcanvasMultimedia" class="offcanvas offcanvas-start" id="offcanvasMultimedia"
+
+                <!--Internet & Network Android-->
+                <div aria-labelledby="offcanvasInternetNetworkAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasInternetNetworkAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasInternetNetworkAndroidLabel">Internet Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasInternetNetwork" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+                <!--Internet & Network Windows-->
+                <div aria-labelledby="offcanvasInternetNetworkWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasInternetNetworkWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasInternetNetworkWindowsLabel">Internet Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasInternetNetwork" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Internet & Network Mac-->
+                <div aria-labelledby="offcanvasInternetNetworkMacLabel" class="offcanvas offcanvas-start" id="offcanvasInternetNetworkMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasInternetNetworkMacLabel">Internet Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasInternetNetwork" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+                <!--Internet & Network Iphone-->
+                <div aria-labelledby="offcanvasInternetNetworkIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasInternetNetworkIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasInternetNetworkIphoneLabel">Internet Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasInternetNetwork" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </span>
+
+            <!-- Multimedia os-->
+            <span>
+                <div aria-labelledby="offcanvasMultimediaLabel" class="offcanvas offcanvas-start" id="offcanvasMultimedia"
                  tabindex="-1">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasMultimediaLabel">Multimedia</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
+                    <h5 class="offcanvas-title" id="offcanvasMultimediaLabel">Multimedia: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasMultimediaAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasMultimediaAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasMultimediaWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasMultimediaWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasMultimediaMac" class="list-group-item list-group-item-action" aria-controls="offcanvasMultimediaMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasMultimediaIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasMultimediaIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--      Development and IT-->
-            <div aria-labelledby="offcanvasDevelopmentIT" class="offcanvas offcanvas-start" id="offcanvasDevelopmentIT"
+
+                 <!--Multimedia Android-->
+                <div aria-labelledby="offcanvasMultimediaAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasMultimediaAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasMultimediaAndroidLabel">Mutimedia Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasMultimedia" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Multimedia Windows-->
+                <div aria-labelledby="offcanvasMultimediaWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasMultimediaWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasMultimediaWindowsLabel">Mutimedia Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasMultimedia" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Multimedia Mac-->
+                <div aria-labelledby="offcanvasMultimediaMacLabel" class="offcanvas offcanvas-start" id="offcanvasMultimediaMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasMultimediaMacLabel">Mutimedia Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasMultimedia" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Multimedia Iphone-->
+                <div aria-labelledby="offcanvasMultimediaIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasMultimediaIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasMultimediaIphoneLabel">Mutimedia Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasMultimedia" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+            </span>
+
+            <!-- Development & IT os-->
+            <span>
+                <div aria-labelledby="offcanvasDevelopmentITLabel" class="offcanvas offcanvas-start" id="offcanvasDevelopmentIT"
                  tabindex="-1">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasDevelopmentITLabel">Development and IT</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
+                    <h5 class="offcanvas-title" id="offcanvasDevelopmentITLabel">DevelopmentIT: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasDevelopmentITAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasDevelopmentITAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasDevelopmentITWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasDevelopmentITWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasDevelopmentITMac" class="list-group-item list-group-item-action" aria-controls="offcanvasDevelopmentITMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasDevelopmentITIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasDevelopmentITIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--      Education and Reference-->
-            <div aria-labelledby="offcanvasEducationReference" class="offcanvas offcanvas-start"
-                 id="offcanvasEducationReference"
+
+                 <!--Development & IT Android-->
+                <div aria-labelledby="offcanvasDevelopmentITAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasDevelopmentITAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDevelopmentITAndroidLabel">Development & IT Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasDevelopmentIT" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Development & IT Windows-->
+                <div aria-labelledby="offcanvasDevelopmentITWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasDevelopmentITWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDevelopmentITWindowsLabel">Development & IT Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasDevelopmentIT" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Development & IT Mac-->
+                <div aria-labelledby="offcanvasDevelopmentITMacLabel" class="offcanvas offcanvas-start" id="offcanvasDevelopmentITMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDevelopmentITMacLabel">Development & IT Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasDevelopmentIT" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Multimedia Iphone-->
+                <div aria-labelledby="offcanvasDevelopmentITIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasDevelopmentITIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDevelopmentITIphoneLabel">Development & IT Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasDevelopmentIT" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+            </span>
+
+            <!--Education & Reference-->
+            <span>
+                <div aria-labelledby="offcanvasEducationReferenceLabel" class="offcanvas offcanvas-start" id="offcanvasEducationReference"
                  tabindex="-1">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasEducationReferenceLabel">Education and Reference</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
+                    <h5 class="offcanvas-title" id="offcanvasEducationReferenceLabel">Education & Reference: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasEducationReferenceAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasEducationReferenceAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasEducationReferenceWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasEducationReferenceWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasEducationReferenceMac" class="list-group-item list-group-item-action" aria-controls="offcanvasEducationReferenceMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasEducationReferenceIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasEducationReferenceIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--      Lifestyle-->
-            <div aria-labelledby="offcanvasLifestyle" class="offcanvas offcanvas-start" id="offcanvasLifestyle"
+
+                 <!--Education & Reference Android-->
+                <div aria-labelledby="offcanvasEducationReferenceAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasEducationReferenceAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasEducationReferenceAndroidLabel">Education & Reference Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasEducationReference" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Education & Reference Windows-->
+                <div aria-labelledby="offcanvasEducationReferenceWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasEducationReferenceWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasEducationReferenceWindowsLabel">Education & Reference Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasDevelopmentIT" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Education & Reference Mac-->
+                <div aria-labelledby="offcanvasEducationReferenceMacLabel" class="offcanvas offcanvas-start" id="offcanvasEducationReferenceMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasEducationReferenceMacLabel">Education & Reference Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasEducationReference" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Education & Reference Iphone-->
+                <div aria-labelledby="offcanvasEducationReferenceIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasEducationReferenceIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasEducationReferenceIphoneLabel">Education & Reference Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasEducationReference" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+            </span>
+
+            <!--Lifestyle-->
+            <span>
+                <div aria-labelledby="offcanvasLifestyleLabel" class="offcanvas offcanvas-start" id="offcanvasLifestyle"
                  tabindex="-1">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasLifestyleLabel">Lifestyle</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
+                    <h5 class="offcanvas-title" id="offcanvasLifestyleLabel">Education & Reference: Select OS</h5>
+                    <svg aria-label="Close" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                         fill="currentColor"
+                         height="16" viewBox="0 0 16 16" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                              fill-rule="evenodd"/>
+                    </svg>
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                       <div class="list-group list-group-flush">
+                            <a href="#offcanvasLifestyleAndroid" class="list-group-item list-group-item-action" aria-controls="offcanvasLifestyleAndroid" data-bs-toggle="offcanvas">Android</a>
+                           <a href="#offcanvasLifestyleWindows" class="list-group-item list-group-item-action" aria-controls="offcanvasLifestyleWindows" data-bs-toggle="offcanvas">Windows</a>
+                           <a href="#offcanvasLifestyleMac" class="list-group-item list-group-item-action" aria-controls="offcanvasLifestyleMac" data-bs-toggle="offcanvas">Mac</a>
+                           <a href="#offcanvasLifestyleIphone" class="list-group-item list-group-item-action" aria-controls="offcanvasLifestyleIphone" data-bs-toggle="offcanvas">Iphone</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--      Personalization-->
-            <div aria-labelledby="offcanvasPersonalization" class="offcanvas offcanvas-start"
-                 id="offcanvasPersonalization"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasPersonalizationLabel">Personalization</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+
+                 <!--Education & Reference Android-->
+                <div aria-labelledby="offcanvasLifestyleAndroidLabel" class="offcanvas offcanvas-start" id="offcanvasLifestyleAndroid" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasLifestyleAndroidLabel">Lifestyle Android</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasLifestyle" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
                     </div>
-                </div>
-            </div>
-            <!--      Social and Communication-->
-            <div aria-labelledby="offcanvasSocialCommunication" class="offcanvas offcanvas-start"
-                 id="offcanvasSocialCommunication"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasSocialCommunicationLabel">Social & Communication</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                    <div class="offcanvas-body">
+
                     </div>
+
                 </div>
-            </div>
-            <!--      Travel and Navigation-->
-            <div aria-labelledby="offcanvasTravelNavigation" class="offcanvas offcanvas-start"
-                 id="offcanvasTravelNavigation"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasTravelNavigationLabel">Travel & Navigation</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+
+                <!--Education & Reference Windows-->
+                <div aria-labelledby="offcanvasEducationReferenceWindowsLabel" class="offcanvas offcanvas-start" id="offcanvasEducationReferenceWindows" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasEducationReferenceWindowsLabel">Education & Reference Windows</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasDevelopmentIT" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
                     </div>
-                </div>
-            </div>
-            <!--      Utilities and Tools-->
-            <div aria-labelledby="offcanvasUtilitiesTools" class="offcanvas offcanvas-start"
-                 id="offcanvasUtilitiesTools"
-                 tabindex="-1">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasUtilitiesToolsLabel">Utilities & Tools</h5>
-                    <button aria-label="Close" class="btn-close" data-bs-target="#offcanvasNavbar"
-                            data-bs-toggle="offcanvas"
-                            type="button"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
+                    <div class="offcanvas-body">
+
                     </div>
+
                 </div>
-            </div>
+
+                <!--Education & Reference Mac-->
+                <div aria-labelledby="offcanvasEducationReferenceMacLabel" class="offcanvas offcanvas-start" id="offcanvasEducationReferenceMac" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasEducationReferenceMacLabel">Education & Reference Mac</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasEducationReference" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+
+                <!--Education & Reference Iphone-->
+                <div aria-labelledby="offcanvasEducationReferenceIphoneLabel" class="offcanvas offcanvas-start" id="offcanvasEducationReferenceIphone" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasEducationReferenceIphoneLabel">Education & Reference Iphone</h5>
+                        <svg aria-label="Close" data-bs-target="#offcanvasEducationReference" data-bs-toggle="offcanvas"
+                             fill="currentColor"
+                             height="16" viewBox="0 0 16 16" width="16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                  fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+
+                </div>
+            </span>
         </div>
     </nav>
 </header>

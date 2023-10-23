@@ -4,7 +4,7 @@ from starlette.responses import RedirectResponse
 from config.database import engine, SessionLocal
 from sqlalchemy.orm import Session
 from typing import Optional
-import testModel
+import models
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from datetime import datetime, timedelta
@@ -17,7 +17,7 @@ SECRET_KEY = "Logicalpussy@dick2!"
 ALGORITHM = "HS256"
 
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-testModel.Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=engine)
 oauth2_bearer = OAuth2PasswordBearer(tokenUrl="token")
 templates = Jinja2Templates(directory="templates")
 
@@ -57,8 +57,8 @@ def verify_password(plain_password, hashed_password):
 
 
 def authenticate_user(username: str, password: str, db):
-    user = db.query(testModel.Users) \
-        .filter(testModel.Users.username == username) \
+    user = db.query(models.Users) \
+        .filter(models.Users.username == username) \
         .first()
 
     if not user:
@@ -153,20 +153,20 @@ async def authentication_page(request: Request):
 async def register_user(request: Request, email: str = Form(), username: str = Form(), firstname: str = Form(),
                         lastname: str = Form(), password: str = Form(), password2: str = Form(),
                         db: Session = Depends(get_db)):
-    validation1 = db.query(testModel.Users).filter(testModel.Users.username == username).first()
-    validation2 = db.query(testModel.Users).filter(testModel.Users.email == email).first()
+    validation1 = db.query(models.Users).filter(models.Users.username == username).first()
+    validation2 = db.query(models.Users).filter(models.Users.email == email).first()
     if password != password2 or validation1 is not None or validation2 is not None:
         msg = "Invalid registration request"
         return templates.TemplateResponse("register.html", {"request": request, "msg": msg})
-    user_model = testModel.Users()
-    user_model.username = username
-    user_model.email = email
-    user_model.first_name = firstname
-    user_model.last_name = lastname
+    user_models = models.Users()
+    user_models.username = username
+    user_models.email = email
+    user_models.first_name = firstname
+    user_models.last_name = lastname
     hash_password = get_password_hash(password)
-    user_model.hashed_password = hash_password
-    user_model.is_active = True
-    db.add(user_model)
+    user_models.hashed_password = hash_password
+    user_models.is_active = True
+    db.add(user_models)
     db.commit()
 
     msg = "User successfully created"

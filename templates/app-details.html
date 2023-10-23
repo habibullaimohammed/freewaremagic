@@ -15,11 +15,11 @@
                 </div>
                 <div>
                     <!-- Add a button to increase the download count -->
-                    <a  id="increaseDownloadButton" class="btn btn-success mt-2 w-100">Increase Download Count</a>
+                    <a id="increaseDownloadButton" class="btn btn-success mt-2 w-100">Increase Download Count</a>
                 </div>
                 <div>
                     <!-- Add a button to increase the download count -->
-                    <a href="/android/{{app_details.name|replace(' ', '-')}}/download"  class="btn btn-success mt-2 w-100"> Download</a>
+                    <a href="/windows/software/{{app_details.name|replace(' ', '-')}}/download"  class="btn btn-success mt-2 w-100"> Download</a>
                 </div>
             </div>
             <nav class="mt-5">
@@ -213,7 +213,7 @@
         var encodedAppName = encodeURIComponent(appName);
 
         // Send a POST request to the FastAPI endpoint to increase the download count
-        fetch(`/android/increase-download-count/${encodedAppName}`, {
+        fetch(`/windows/increase-download-count/${encodedAppName}`, {
             method: "POST"
         })
             .then(response => {

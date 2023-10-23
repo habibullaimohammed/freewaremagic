@@ -4,15 +4,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9">
-                <h4 class="">
+                <h2>
                     {% if request.path == '/android/'%}
                     Android Apps
                     {% elif request.path == '/windows/' %}
                     Windows Apps
+                    {% elif request.path == '/mac/' %}
+                    Mac Apps
+                    {% elif request.path == '/iphone/' %}
+                    Iphone Apps
+                    {% elif request.path == '/console-game/' %}
+                    Console Game
                     {% else%}
-                    Console Games
+                    GOG Apps
                     {% endif%}
-                </h4>
+                </h2>
                 <div class="border-top border-bottom mb-3 mt-3"><a class="btn dropdown-toggle"
                                                                    data-bs-toggle="offcanvas" href="#offcanvasCategory"
                                                                    role="button"
@@ -20,7 +26,20 @@
                     Categories
                 </a>
                     {% if user != None%}
-                    <a class="btn" href={% if request.path== '/android/' %}"/android/add-android-apps/"{%endif%}
+                    <a class="btn" href=
+                            {% if request.path == '/android/'%}
+                            "/android/add-android-apps/"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/add-window-apps/"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/add-mac-apps/"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/add-iphone-apps/"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/add-console-game/"
+                            {% else%}
+                            "/gog-game/add-gog-game/"
+                            {% endif%}
                     role="button">
                     Add new app
                     </a>
@@ -36,37 +55,225 @@
                     </div>
                     <div class="offcanvas-body">
                         <div class="list-group list-group-flush">
-                            <a href="/android/Games"
-                               class="list-group-item {% if request.path == '/android/Games'%} active {% endif %}"
-                               aria-current="true">Games</a>
-                            <a class="list-group-item {% if request.path == '/android/AI'%} active {% endif %}">AI</a>
-                            <a href="/android/Browsers"
-                               class="list-group-item {% if request.path == '/android/Browsers'%} active {% endif %}">Browsers</a>
-                            <a class="list-group-item {% if request.path == '/android/Security & Privacy'%} active {% endif %}">Security
-                                & Privacy</a>
-                            <a class="list-group-item {% if request.path == '/android/Business & Productivity'%} active {% endif %}">Business
-                                & Productivity</a>
-                            <a class="list-group-item {% if request.path == '/android/Internet & Network'%} active {% endif %}">Internet
-                                & Network</a>
-                            <a class="list-group-item {% if request.path == '/android/Multimedia'%} active {% endif %}">Multimedia</a>
-                            <a class="list-group-item {% if request.path == '/android/Development & IT'%} active {% endif %}">Development
-                                & IT</a>
-                            <a class="list-group-item {% if request.path == '/android/Education & Reference'%} active {% endif %}">Education
-                                & Reference</a>
-                            <a class="list-group-item {% if request.path == '/android/Lifestyle'%} active {% endif %}">Lifestyle</a>
-                            <a class="list-group-item {% if request.path == '/android/Personalization'%} active {% endif %}">Personalization</a>
-                            <a class="list-group-item {% if request.path == '/android/Social & Communication'%} active {% endif %}">Social
-                                & Communication</a>
-                            <a class="list-group-item {% if request.path == '/android/Travel & Navigation<'%} active {% endif %}">Travel
-                                & Navigation</a>
-                            <a class="list-group-item {% if request.path == '/android/Utilities & Tools'%} active {% endif %}">Utilities
-                                & Tools</a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/games"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/games"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/games"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/games"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/games"
+                            {% else%}
+                            "/gog-game/games/"
+                            {% endif%}
+                            class="list-group-item">Games</a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/ai"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/ai"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/ai"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/ai"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/ai"
+                            {% else%}
+                            "/gog-game/ai"
+                            {% endif%}
+                                    class="list-group-item ">AI</a>
+
+                            <a href={% if request.path == '/android/'%}
+                            "/android/browsers"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/browsers"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/browsers"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/browsers"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/browsers"
+                            {% else%}
+                            "/gog-game/browsers/"
+                            {% endif%}
+                               class="list-group-item ">Browsers</a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/security-privacy"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/security-privacy""
+                            {% elif request.path == '/mac/' %}
+                            "/mac/security-privacy""
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/security-privacy""
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/security-privacy""
+                            {% else%}
+                            "/gog-game/security-privacy"/"
+                            {% endif%}
+                                    class="list-group-item ">
+                                Security & Privacy
+                            </a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/business-productivity"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/business-productivity""
+                            {% elif request.path == '/mac/' %}
+                            "/mac/business-productivity""
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/business-productivity""
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/business-productivity""
+                            {% else%}
+                            "/gog-game/business-productivity"/"
+                            {% endif%}
+                                    class="list-group-item ">
+                                Business & Productivity
+                            </a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/internet-network"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/internet-network"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/internet-network"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/internet-network"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/internet-network"
+                            {% else%}
+                            "/gog-game/internet-network/"
+                            {% endif%}
+                                    class="list-group-item ">
+                                Internet & Network
+                            </a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/multimedia"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/multimedia"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/multimedia"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/multimedia"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/multimedia"
+                            {% else%}
+                            "/gog-game/multimedia/"
+                            {% endif%}
+                                    class="list-group-item ">Multimedia</a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/development"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/development"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/development"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/development"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/development"
+                            {% else%}
+                            "/gog-game/development/"
+                            {% endif%}
+                                    class="list-group-item ">
+                            Development & IT
+                            </a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/education-reference"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/education-reference"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/education-reference"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/education-reference"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/education-reference"
+                            {% else%}
+                            "/gog-game/eduction-reference/"
+                            {% endif%}
+                                    class="list-group-item ">
+                                Education & Reference
+                            </a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/lifestyle"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/lifestyle"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/lifestyle"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/lifestyle"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/lifestyle"
+                            {% else%}
+                            "/gog-game/lifestyle/"
+                            {% endif%}
+                                    class="list-group-item ">Lifestyle</a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/personalization"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/personalization"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/personalization"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/personalization"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/personalization"
+                            {% else%}
+                            "/gog-game/personalization/"
+                            {% endif%}
+                                    class="list-group-item ">Personalization</a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/social-communication"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/social-communication"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/social-communication"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/social-communication"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/social-communication"
+                            {% else%}
+                            "/gog-game/social-communication/"
+                            {% endif%}
+                                    class="list-group-item ">
+                                Social & Communication
+                            </a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/travel-navigatioin"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/travel-navigatioin"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/travel-navigatioin"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/travel-navigatioin"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/travel-navigatioin"
+                            {% else%}
+                            "/gog-game/travel-navigatioin/"
+                            {% endif%}
+                                    class="list-group-item ">
+                                Travel & Navigation
+                            </a>
+                            <a href={% if request.path == '/android/'%}
+                            "/android/utilities-tools"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/utilities-tools"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/utilities-tools"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/utilities-tools"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/utilities-tools"
+                            {% else%}
+                            "/gog-game/utilities-tools/"
+                            {% endif%}
+                                    class="list-group-item">
+                                Utilities & Tools
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="row d-none d-sm-flex">
-                    {% for category, apps in android_apps|groupby('category') %}
+                    {% for category, apps in windows_app|groupby('category') %}
                     <div class="col-lg-4 mt-3 mb-3">
                         <div class="card">
                             <div class="card-header">
@@ -101,7 +308,7 @@
                 </div>
                 <div class="row flex-nowrap overflow-x-scroll hide-horizontal-scrollbar d-lg-none">
 
-                    {% for category, apps in android_apps|groupby('category') %}
+                    {% for category, apps in windows_app|groupby('category') %}
                     <div class="col-lg-4 mt-3 mb-3">
                         <div class="card">
                             <div class="card-header">
@@ -137,11 +344,39 @@
 
                 <div class="col">
                     <h5 class="pb-2">All Apps</h5>
-                    <span><small>for windows</small></span>
+                    <span>
+                        <small>
+                            {% if request.path == '/android/'%}
+                            for android
+                            {% elif request.path == '/windows/' %}
+                            for windows
+                            {% elif request.path == '/mac/' %}
+                            for mac
+                            {% elif request.path == '/iphone/' %}
+                            for iphone
+                            {% elif request.path == '/console-game/' %}
+                            for console game
+                            {% else%}
+                            for gog game
+                            {% endif%}
+                        </small>
+                    </span>
                     <div class="row g-2">
-                        {% for app in android_apps %}
+                        {% for app in windows_app %}
                         <div class="col-lg-3">
-                            <a class="text-decoration-none" href="/android/software/{{ app.name|replace(' ', '-') }}">
+                            <a class="text-decoration-none" href={% if request.path == '/android/'%}
+                             "/android/software/{{ app.name|replace(' ', '-') }}"
+                            {% elif request.path == '/windows/' %}
+                            "/windows/software/{{ app.name|replace(' ', '-') }}"
+                            {% elif request.path == '/mac/' %}
+                            "/mac/software/{{ app.name|replace(' ', '-') }}"
+                            {% elif request.path == '/iphone/' %}
+                            "/iphone/software/{{ app.name|replace(' ', '-') }}"
+                            {% elif request.path == '/console-game/' %}
+                            "/console-game/software/{{ app.name|replace(' ', '-') }}"
+                            {% else%}
+                            "/gog-game/software/{{ app.name|replace(' ', '-') }}"
+                            {% endif%} >
                                 <div class="card">
                                     <img src="{{ app.image_url }}" class="card-img-top p-5" alt="...">
                                     <div class="card-body">
@@ -233,12 +468,12 @@
                                 <table class="table table-hover">
                                     <tbody>
 
-                                    {% for app in android_apps | sort(attribute='download_count', reverse=true) %}
+                                    {% for app in windows_app | sort(attribute='download_count', reverse=true) %}
                                     <tr>
                                         <th scope="row">{{ loop.index }}</th>
                                         <td>
                                             <a class="text-decoration-none text-dark"
-                                               href="/android/software/{{ app.name|replace(' ', '-') }}">
+                                               href="/windows/software/{{ app.name|replace(' ', '-') }}">
                                                 <img alt="{{app.name}}"
                                                      class="pe-2"
                                                      src="{{ app.image_url }}"
@@ -248,7 +483,7 @@
                                         </td>
                                         <td class="d-none d-lg-table-cell">{{ app.download_count }} Downloads</td>
                                         <td>
-                                                <a href="/android/software/{{ app.name|replace(' ', '-') }}" class="btn btn-success" type="button">
+                                                <a href="/windows/software/{{ app.name|replace(' ', '-') }}" class="btn btn-success" type="button">
                                                     <svg class="bi bi-download" fill="currentColor" height="16"
                                                          viewBox="0 0 16 16" width="16"
                                                          xmlns="http://www.w3.org/2000/svg">
